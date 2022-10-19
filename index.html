@@ -603,7 +603,7 @@
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008184721.png)
 								
 				Note:
-				
+				接下来是 ADC 静态参数的测试流程。它是由 AWG 输入模拟信号，再输出到 WD 进行分析，它们用的是同个时钟源。
 				---
 
 				Since the ADC voltage-to-code transfer curve is a many-to-one mapping function:
@@ -611,7 +611,7 @@
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008185819.png)
 								
 				Note:
-				
+				因为 ADC 得到的是一系列多对一映射的离散点，
 				---
 
 				We use linear ramp histogram method (code width measurement) practically. The input ramp is slow enough to give a statistically relevant "number of hits per code".
@@ -619,7 +619,7 @@
 				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008190154.png" style="height: 400px;" />
 								
 				Note:
-				
+				所以通常用直方图来展示。
 				---
 
 				Block diagram of signal setup:
@@ -627,7 +627,7 @@
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008190612.png)
 								
 				Note:
-				
+				这是主要系统的原理框图。？
 				---
 
 				### Tests Concept
@@ -639,7 +639,7 @@
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008193036.png)
 												
 				Note:
-				
+				首先要生成一个 ramp 波，电压幅度要超出 DUT 的 FSR，以确保能覆盖所有的输出编码。
 				---
 
 				#### 2. Take data between the start (min+1, e.g. 0…01) and the end (max-1, e.g. 1…10) of the ramp. That gives $2^n – 2$ codes' worth of data
@@ -649,7 +649,7 @@
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008194207.png)
 												
 				Note:
-				
+				从 ramp 波的第一个到最后一个数字值之间取数据。
 				---
 
 				for the ideal ADC DUT, 16 output codes are appear in the same times:
@@ -657,7 +657,7 @@
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008194450.png)
 												
 				Note:
-				
+				如果是一个理想的 ADC DUT，那么直方图中间一片出现次数都是一样的，都是 16 次。
 				---
 
 				However, a real device will have a count more than 16 times for wider codes, and less than 16 times for narrower ones (But sum of the total occurrence should be still $2^{bits}$ times of 16):
@@ -665,13 +665,13 @@
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008194813.png)
 												
 				Note:
-				
+				但实际的 DUT 是这样的，比较宽的台阶对应直方图中次数会比较多，但总的出现次数是不会变的。
 				---
 
 				#### 3. Calculate for DNL for each step
 				
 				$$
-				DNL[i]=\frac{Hits[i]-\frac{\sum Hits[i]}{2^n-2}}{\frac{\sum Hits[i]}{2^n-2}}
+				DNL[i]=\frac{Hits[i]-\frac{\sum Hits[i]}{2^n-2}}{\frac{\sum Hits[i]}{2^n-2}}* LSB
 				$$
 
 				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008234157.png" style="height: 200px;" />
@@ -679,7 +679,7 @@
 				Where $Hits[i]$ represents the Actual Output Code Count, and $\frac{\sum Hits[i]}{2^n-2}$ represents the Ideal Output Code Count.
 												
 				Note:
-				
+				然后计算 DNL， DNL 可以由实际出现次数减理想出现次数，再比上理想出现次数，得到一个比值。
 				---
 
 				For an example historam graph as shown below:
@@ -694,7 +694,7 @@
 				Therefore DNL[1] (Code 001) = (14-16)/16 \* LSB => -0.125 \* LSB.
 												
 				Note:
-				
+				举个例子，DNL 是这样算的，但第一个数值和最后一个数值不会被算进去。
 				---
 
 				#### 4. Get the max and min DNL
@@ -702,7 +702,7 @@
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008235342.png)
 												
 				Note:
-				
+				测量最大和最小 DNL 值。
 				---
 
 				#### 5. Calculate for INL for each step
@@ -720,7 +720,7 @@
 				$$
 												
 				Note:
-				
+				INL 是除了零和满量程之外的，DNL 的累积值。
 				---
 
 				For an example graph below,
@@ -741,7 +741,7 @@
 				$$
 												
 				Note:
-				
+				举个例子，可以这样由 DNL 算得。
 				---
 
 				#### 6. Get the max and min INL
@@ -749,7 +749,7 @@
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009201838.png)
 
 				Note:
-
+				最后测量最大和最小 DNL 值。
 				</textarea
             >
           </section>
