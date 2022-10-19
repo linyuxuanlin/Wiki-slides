@@ -474,16 +474,20 @@
 				- 8 horizontal steps
 				- 7 transitions
 				- 6 steps between 7 transitions
+
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008151344.png" style="height: 400px;" />
 				
 				Note:
 				
 				---
 
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008151344.png)
-				
 				- **Zero Scale Range Transition Voltage ($V_{ZST}$)**: Voltage of the analog input signal when the first transition is recorded.
 				- **Full Scale Range Transition Voltage ($V_{FST}$)**: Voltage of the analog input signal when the last transition is recorded.
-				- **Full Scale Range (FSR)**: Maximum extreme of the analog input signal supplied to the ADC. $FSR = (V_{FST}-V_{ZST}) + 2 LSB$, $V_{FSR(refer to VZS)} = (V_{FST}-0.5LSB)-(V_{ZST}-0.5LSB) + 2 LSB$
+				- **Full Scale Range (FSR)**: Maximum extreme of the analog input signal supplied to the ADC. 
+				
+				$FSR = (V_{FST}-V_{ZST}) + 2 LSB$, 
+				
+				$V_{FSR(refer to VZS)} = (V_{FST}-0.5LSB)-(V_{ZST}-0.5LSB) + 2 LSB$
 								
 				Note:
 				
@@ -493,13 +497,7 @@
 				
 				**Offset Error** (Zero-Scale Error) is the difference between ideal and actual offset (initial) points. It is measured from the midpoint of the zero step (ideal to actual) for the ADC.
 								
-				Note:
-				
-				---
-				
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008154521.png)
-				
-				Where
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008154521.png" style="height: 400px;" />
 				
 				$$
 				V_{ZS}=V_{ZST}-0.5LSB
@@ -512,15 +510,9 @@
 				### Gain Error
 				
 				**Gain Error** is the difference between ideal and actual gain points on the transfer function (after the offset error has been corrected to zero). It is measured from the midpoint of the full step for the ADC.
-								
-				Note:
-				
-				---
 
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008155259.png)
-				
-				Where
-				
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008155259.png" style="height: 250px;" />
+
 				$$
 				V_{FS}=V_{FST}-0.5LSB+2LSB
 				$$
@@ -536,11 +528,8 @@
 				Note:
 				
 				---
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008160020.png" style="height: 400px;" />
 
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008160020.png)
-				
-				Equations to describe DNL:
-				
 				$$
 				DNL[n]=CodeWidth_n-LSB_{average}
 				$$
@@ -554,8 +543,7 @@
 				---
 
 				another image to decribe DNL:
-				
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008161707.png)
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008161707.png" style="height: 450px;" />
 				
 				If DNL exceeds is too large, one or more codes will be missing and never receive an output.
 								
@@ -570,8 +558,7 @@
 				Note:
 				
 				---
-
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008163705.png)
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008163705.png" style="height: 400px;" />
 				
 				The deviations are measured at the transition points from one step to the next for the ADC. INL is the deviation of the values of the actual step function to the ideal straight line function.
 								
@@ -579,8 +566,8 @@
 				
 				---
 
-				Equations to describe INL:
-				
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008163911.png" style="height: 350px;" />
+
 				$$
 				INL[n]=INL_{n-1}+{\frac{DNL_{n-1}+DNL_{n}}{2}}
 				$$
@@ -588,13 +575,7 @@
 				$$
 				INL=[(\frac{BinaryCode}{2^{bits}-1})(V_{FS}-V_{ZS})+V_{offset}]-CodeCentor
 				$$
-								
-				Note:
-				
-				---
 
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008163911.png)
-								
 				Note:
 				
 				---
@@ -625,7 +606,7 @@
 
 				We use linear ramp histogram method (code width measurement) practically. The input ramp is slow enough to give a statistically relevant "number of hits per code".
 				
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008190154.png)
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008190154.png" style="height: 400px;" />
 								
 				Note:
 				
@@ -682,14 +663,10 @@
 				$$
 				DNL[i]=\frac{Hits[i]-\frac{\sum Hits[i]}{2^n-2}}{\frac{\sum Hits[i]}{2^n-2}}
 				$$
-				
-				Where $Hits[i]$ represents the Actual Output Code Count, and $\frac{\sum Hits[i]}{2^n-2}$ represents the Ideal Output Code Count.
-												
-				Note:
-				
-				---
 
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008234157.png)
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008234157.png" style="height: 200px;" />
+
+				Where $Hits[i]$ represents the Actual Output Code Count, and $\frac{\sum Hits[i]}{2^n-2}$ represents the Ideal Output Code Count.
 												
 				Note:
 				
@@ -697,7 +674,7 @@
 
 				For an example historam graph as shown below:
 				
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008234921.png)
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008234921.png" style="height: 200px;" />
 				
 				for DNL[1](Code 001),
 				
@@ -738,8 +715,8 @@
 
 				For an example graph below,
 				
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009201547.png)
-				
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009201547.png" style="height: 250px;" />
+
 				$$
 				INL[1] = DNL[1] = -0.125 * LSB
 				$$
@@ -761,6 +738,8 @@
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009201838.png)
 
+				Note:
+				
 			  </textarea
             >
           </section>
