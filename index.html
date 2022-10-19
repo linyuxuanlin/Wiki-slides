@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
-    <link rel="stylesheet" href="dist/theme/black.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
@@ -419,7 +419,7 @@
           <section data-markdown>
             <textarea data-template>
 
-				# ADC Contents
+				# ADC Content
 
 				---
 
@@ -435,9 +435,18 @@
 
 				Note:
 				因为是把模拟信号变成数字信号，从连续到离散会引入量化误差。
-				---
-				
-				## Static Parameters
+
+				</textarea
+            >
+          </section>
+        </section>
+
+        <!-- Static Parameters of ADC -->
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+
+				## Static Parameters of ADC
 				
 				ADC's static parameters mainly contain:
 				
@@ -739,8 +748,400 @@
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009201838.png)
 
 				Note:
+
+				</textarea
+            >
+          </section>
+        </section>
+
+        <!-- Dynamic Parameters of ADC -->
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+
+				## Dynamic Parameters of ADC
+				
+				ADC's dynamic parameters mainly contain:
+				
+				- Signal to Noise Ratio (SNR)
+				- Total Harmonic Distortion (THD)
+				- Signal to Noise and Distortion Ratio (SINAD)
+				- Inter-modulation Error (IM)
+																
+				Note:
+				
+				---
+
+				### Signal to Noise Ratio (SNR)
+				
+				**Signal to Noise Ratio (SNR)** of an ADC is defined as the ratio of the Measured Signal Power's RMS (excluding Harmonic Distortion) to the Noise Power's RMS:
+				
+				$$
+				SNR(dB)=20log(\frac{V_{Signal(RMS)}}{V_{Noise(RMS)}})
+				$$
+				
+				Since SNR is an ratio of power, $20$ in the equation means the square of the ratio of voltage.
+																
+				Note:
+				
+				---
+
+				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009221450.png)
+				
+				Although the Harmonic Distortion is not included in the measurement of SNR, but the Quantization, Thermal and other residual noise in converter are included.
+																
+				Note:
+				
+				---
+
+				### Total Harmonic Distortion (THD)
+				
+				**Total Harmonic Distortion (THD)** of an ADC is defined as the ratio of the fundamental to all the harmonic distortion:
+				
+				$$
+				THD(dB)=20log(\frac{\sqrt{V^2_{2(RMS)}+V^2_{3(RMS)}+...+V^2_{n(RMS)}}}{V_{1(RMS)}})
+				$$
+																
+				Note:
+				
+				---
+
+				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009225800.png)
+																
+				Note:
+				
+				---
+
+				## How to Test Dynamic Parameters
+																
+				Note:
+				
+				---
+
+				### Test System Setup
+				
+				Test system setup for ADC dynamic parameter tests:
+				
+				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009230212.png)
+				
+				Resolution of AC SRC should be at least 2 to 4 bits better than DUT.
+																
+				Note:
+				
+				---
+
+				### Tests Concept
+				
+				ADC has a theoretical best ever SNR of:
+				
+				$$
+				SNR = (6.02N + 1.76) dB
+				$$
+				
+				Where $N$ is the number of ADC's bits.
+																
+				Note:
+				
+				---
+
+				#### 1. Make a continuous input signal with the tester for the ADC to convert
+				
+				It is common practice to ensure that the analog/digital clock are referenced to a common master clock, so that the relationship of the clock sources's frequency is fixed and synchronized, which making test results highly repeatable.
+				
+				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011122459.png)
+																
+				Note:
+				
+				---
+
+				#### 2. Collect a set of samples with the ADC coherently
+				
+				For AC Source:
+				
+				$$
+				\frac{Fs}{Fi}=\frac{Ns}{Ms}
+				$$
+				
+				Where $Fs$ is the samping rate of AC Source, $Fi$ is signal frequency, $Ns$ is the number of samples (does not have to be a 2x number), $Ms$ is the number of integer cycles (does not have to be odd).
+																
+				Note:
+				
+				---
+
+				For Digital Capture:
+				
+				$$
+				\frac{Fs(dut)}{Fi}=\frac{Ncap}{Mc}
+				$$
+				
+				Where $Fs(dut)$ is the ADC sampling rate also the Digital Capture's sample rate, $Fi$ is the signal frequency, $Ncap$ is the number of samples captured (2x number), $Mc$ is the number of integer cycles (odd).
+																
+				Note:
+				
+				---
+
+				#### 3. Send the collected set of time samples to the DSP to perform DFT / FFT analysis
+				
+				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011140834.png)
+				
+												
+				Note:
+				
+				---
+
+				
+				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011140904.png)
+																
+				Note:
+				
+				---
+
+				#### 4. Analyze the frequency bins of interest using equations or tester algorithms for SNR, THD and compare to specification
+				
+				#### 5. Make a pass / fail decision based on the results
+
+
 				
 			  </textarea
+            >
+          </section>
+        </section>
+
+        <!-- DAC Contents -->
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+					# DAC Content
+  
+					---
+
+					Digital to Analog Converter (ADC) is a device to converts a sequence of digital input data into analog signals.
+
+					![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011141644.png)
+	  
+				  Note:
+				  DAC 是一个把输入的数字信号转化为模拟信号的设备。
+				  </textarea
+            >
+          </section>
+        </section>
+
+        <!-- Static Parameters of DAC -->
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+
+						## Static Parameters
+						
+						DAC's static parameters mainly contain:
+						
+						- Zero Scale Output
+						- Full Scale Range (FSR)
+						- LSB Size
+						- Offset Error
+						- Gain Error
+						- Differential Non-Linearity Error (DNE or DNL)
+						- Integral Non-Linearity Error (INE or INL)
+						
+						Note:
+						
+						---
+
+						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011144045.png)
+						
+						Note:
+						
+						---
+
+						### Zero Scale Output
+						
+						**Zero Scale Output** is the measured output value when the zero/null level digital input code is presented to the DUT.
+						
+						Note:
+						
+						---
+
+						### Full Scale Range (FSR)
+						
+						Range of DAC output voltage between the minimum ($V_{ZS}$) and maximum ($V_{FS}$) analog outputs is called **Full Scale Range (FSR)**:
+						
+						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011142249.png)
+						
+						Note:
+						
+						---
+
+						### LSB Size
+						
+						Average change in voltage when in between the input codes is defined as LSB:
+						
+						$$
+						LSB=\frac{FSR_{measured}}{2^{bits}-1}
+						$$
+						
+						Note:
+						
+						---
+
+						### Offset Error
+						
+						**Offset Error** (Zero-Scale Error) is the voltage difference between ideal and actual offset (initial) points.
+						
+						$$
+						OffsetError=V_{ZS(Actual)}-V_{ZS(ideal)}
+						$$
+						
+						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011144415.png)
+						
+						Note:
+						
+						---
+
+						### Gain Error
+						
+						**Gain Error** is the voltage difference between ideal and actual gain points on the transfer function.
+						
+						$$
+						GainError=FSR_{Ideal}-FSR_{Actual}
+						$$
+						
+						Where
+						
+						$$
+						FSR_{Ideal}=V_{FS(ideal)}-V_{ZS(ideal)}
+						$$
+						
+						$$
+						FSR_{Actual}=V_{FS(Actual)}-V_{ZS(Actual)}
+						$$
+						
+						Note:
+						
+						---
+
+						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011144925.png)
+						
+						Note:
+						
+						---
+
+						### Differential Non-Linearity Error (DNL)
+						
+						**Differential Non-Linearity Error (DNL)** is the difference in the output voltage at a specific, compared to the output at the previous input, then minus one device LSB:
+						
+						$$
+						DNL=(V_{in2}-V_{in1})-LSB_{average}
+						$$
+						
+						where $V_{in2}$ is the voltage of the upper transition, $V_{in1}$ is the lower.
+						
+						Note:
+						
+						---
+
+						DNL is a measure of "small-signal" linearity error. Measurement of DNL is made from one step to the next, not each step to the ideal value.
+						
+						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011153556.png)
+						
+						Note:
+						
+						---
+
+						### Integral Non-Linearity Error (INL)
+						
+						**Integral Non-Linearity Error (INL)** is the cumulative effect of all differential non-linearity values.It is a measure of "large-signal" linearity error. INL at any point along the curve is the deviation of the ideal linearity line.
+
+						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011184739.png)
+
+						Note:
+						
+						---
+
+						$$
+						ExpectedOutput[i]=FSR*InputCode[i]+OffsetError
+						$$
+						
+						$$
+						INL[i]=\frac{ActualOutput[i]-ExpectedOutput[i]}{LSB_{average}}
+						$$
+						
+						Also, INL can also be expressed as a function of DNL:
+						
+						$$
+						INL[i]=\sum_{n=1}^{n=i}DNL[n]
+						$$
+
+						Note:
+						
+						---
+
+						## How to Test Static Parameters
+						
+						Note:
+						
+						---
+
+						### Test System Setup
+						
+						Test system setup for DAC static parameter tests:
+						
+						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011185006.png)
+						
+						Note:
+						
+						---
+
+						Block diagram of signal setup:
+						
+						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011185447.png)
+						
+						Note:
+						
+						---
+
+						### Tests Concept
+						
+						Procedure of testing the static parameters of an DAC DUT is listed below.
+						
+						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011185739.png)
+						
+						Note:
+						
+						---
+
+						#### 1. Measure the output voltage by applying the digital data inputs from Zero Scale to Full Scale
+						
+						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011185711.png)
+						
+						Note:
+						
+						---
+
+						#### 2. Calculate DNL for each input code
+						
+						$$
+						DNL[i]=\frac{OutputMeasured[i]-OutputMeasured[i-1]-LSB_{average}}{LSB_{average}}
+						$$
+						
+						Where
+						
+						$$
+						LSB_{average}=\frac{OutputMeasured[n]-OutputMeasured[0]}{2^{bits}-1}
+						$$
+						
+						Note:
+						
+						---
+
+						#### 3. Get the max and min DNL
+						
+						#### 4. Calculate for INL for each step
+						
+						#### 5. Get the max and min INL
+						
+						Note:
+						
+	  </textarea
             >
           </section>
         </section>
