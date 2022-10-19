@@ -472,7 +472,7 @@
 				For an ideal ADC, LSB represents all of the each code's width.
 
 				Note:
-				
+				ADC 每个 bit 对应的模拟电压输入的宽度称为 LSB。由这条公式得到，首末次转换的电压的差值除以这个，减 2 是因为减去首末两个状态。
 				---
 
 				
@@ -487,7 +487,7 @@
 				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008151344.png" style="height: 400px;" />
 				
 				Note:
-				
+				假设一个 3 位 ADC，那么它总共有 8 个水平台阶，7 次转换。
 				---
 
 				- **Zero Scale Range Transition Voltage ($V_{ZST}$)**: Voltage of the analog input signal when the first transition is recorded.
@@ -499,35 +499,35 @@
 				$V_{FSR(refer to VZS)} = (V_{FST}-0.5LSB)-(V_{ZST}-0.5LSB) + 2 LSB$
 								
 				Note:
-				
+				VZST 就是触发第一次转换时的模拟电压，VFST 是触发最后一次的电压，FSR 就是总的量程，它可以由末次转换减首次转换的电压再加上首末两个 LSB 得到，而 VFSR 参考的是台阶的中心点，所以它是这样算得的。
 				---
 
 				### Offset Error
 				
 				**Offset Error** (Zero-Scale Error) is the difference between ideal and actual offset (initial) points. It is measured from the midpoint of the zero step (ideal to actual) for the ADC.
 								
-				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008154521.png" style="height: 400px;" />
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008154521.png" style="height: 270px;" />
 				
 				$$
 				V_{ZS}=V_{ZST}-0.5LSB
 				$$
 								
 				Note:
-				
+				Offset Error 是当模拟输入初始值时，与理想初始输入值的偏差。因为它是量中间点，所以要由第一次转换的电压减去半个 LSB 得到。
 				---
 
 				### Gain Error
 				
 				**Gain Error** is the difference between ideal and actual gain points on the transfer function (after the offset error has been corrected to zero). It is measured from the midpoint of the full step for the ADC.
 
-				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008155259.png" style="height: 250px;" />
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008155259.png" style="height: 270px;" />
 
 				$$
 				V_{FS}=V_{FST}-0.5LSB+2LSB
 				$$
 								
 				Note:
-				
+				Gain Error 当模拟输入满量程的值时，与理想值的偏差。在测之前要先把 Offset Error 给校准了，由这个式子得到。
 				---
 
 				### Differential Non-Linearity Error (DNL)
@@ -535,8 +535,9 @@
 				**Differential Non-Linearity Error (DNL)** is the difference between an actual step width and an ideal step width (1 LSB). It's a measure of "small-signal" linearity error, and is measured from the difference in the analog input voltage between 2 adjacent transitions and the device's average LSB.
 								
 				Note:
-				
+				DNL 指的是实际一步的宽度与 LSB 之间的偏差。实际一步宽度指的是某个位置相邻两次转换之间的电压差值。
 				---
+
 				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008160020.png" style="height: 400px;" />
 
 				$$
@@ -557,7 +558,7 @@
 				If DNL exceeds is too large, one or more codes will be missing and never receive an output.
 								
 				Note:
-				
+				有一种情况，如果 DNL 过大，可能会产生丢码的现象。
 				---
 
 				### Integral Non-Linearity Error (INL)
@@ -565,14 +566,14 @@
 				**Integral Non-Linearity Error (INL)** is the cumulative effect at any given input of all differential non-linearity values. It is a measure of "large-signal" linearity error. INL at any point along the curve is the deviation of the ideal linearity line.
 								
 				Note:
-				
+				如果说 DNL 描述的是微观参数，那 INL 描述的是宏观的，它是一个对非线性值的累计误差。
 				---
 				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008163705.png" style="height: 400px;" />
 				
 				The deviations are measured at the transition points from one step to the next for the ADC. INL is the deviation of the values of the actual step function to the ideal straight line function.
 								
 				Note:
-				
+				它描述的是与理想直线之间的偏差。
 				---
 
 				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008163911.png" style="height: 350px;" />
@@ -586,7 +587,7 @@
 				$$
 
 				Note:
-				
+				某一点的 INL 可以表示为前一个点的值加上这个点的 DNL 得到，也可以这样直接算得。
 				---
 
 				## How to Test Static Parameters
@@ -1280,14 +1281,11 @@
           </section>
         </section>
 
-        <!--   -->
+        <!-- End -->
         <section>
           <section data-markdown>
             <textarea data-template>
-				<img data-src="" style="height: 400px;" />
-				Note:
-				
-				---
+				# Thanks for participating
 			</textarea
             >
           </section>
