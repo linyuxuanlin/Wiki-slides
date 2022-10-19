@@ -1,66 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mixed Signal Fundamental Review</title>
 
-	<title>Mixed Signal Fundamental Review</title>
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
 
-	<link rel="stylesheet" href="dist/reset.css">
-	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/black.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
 
-	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet" href="plugin/highlight/monokai.css">
-
-</head>
-
-<body>
-	<style type="text/css">
-		.reveal p {
-			text-align: left;
-		}
-
-		.reveal h2 {
-			text-align: left;
-		}
-
-		.reveal h3 {
-			text-align: left;
-		}
-	</style>
-	<div class="reveal">
-		<div class="slides">
-
-
-			<!-- Introduce -->
-			<section>
-				<section data-markdown>
-					<textarea data-template>
+  <body>
+    <style type="text/css">
+      .reveal p {
+        text-align: left;
+      }
+      .reveal h2 {
+        text-align: left;
+      }
+      .reveal h3 {
+        text-align: left;
+      }
+    </style>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Introduce -->
+        <section>
+          <section data-markdown>
+            <textarea data-template>
 						# Mixed Signal Fundamental Review
-					</textarea>
-				</section>
-			</section>
+					</textarea
+            >
+          </section>
+        </section>
 
-			<!-- Basics of Mixed Signal Test  -->
-			<section>
-				<section data-markdown>
-					<textarea data-template>
+        <!-- Basics of Mixed Signal Test  -->
+        <section>
+          <section data-markdown>
+            <textarea data-template>
 
 						# Basics of Mixed Signal Test
 
 						---
 
-						Mixed signal contains both **analog** and **digital** signals. Devices processing mixed signal
-						typically
-						include **ADCs**, **DACs**, analog switches and multiplexers, sample-and-hold amplifiers, and so
-						on.
+						Mixed signal contains both **analog** and **digital** signals. Devices processing mixed signal typically include **ADCs**, **DACs**, analog switches and multiplexers, sample-and-hold amplifiers, and so on.
 
-						As a part of it, analog signals is signals we use in the real world such as voice or
-						tempurature,
-						it's continuous in both time and amplitude. To process analog signals into computers, we need to
-						convert them to digital signals, as it's discrete in both time and amplitude.
+						As a part of it, analog signals is signals we use in the real world such as voice or tempurature, it's continuous in both time and amplitude. To process analog signals into computers, we need to convert them to digital signals, as it's discrete in both time and amplitude.
 
 						Note:
 						混合信号处理通常包括模拟和数字信号处理，这类型的设备主要有ADC、DAC、模拟开关之类的。
@@ -120,21 +112,13 @@
 
 						### Coherent Sampling
 
-						If a time sample set does not contain a precise integer number of cycles, **spectral
-						leakage（频谱泄露）**
-						will occur.
+						If a time sample set does not contain a precise integer number of cycles, **spectral leakage（频谱泄露）** will occur.
 
 						Note:
 						接下来介绍相干采样，也叫连贯性采样。它存在的理由是，在快速傅里叶变换时，如果一个采样不连续，拼接的时候就会导致频谱泄露。
 						---
 
-						**Coherent sampling（相干采样）** is to ensure the continuity of sampling and prevent spectral
-						leakage, it
-						guarantees that a sample set (a series of samples which represent the analog signal) has a fixed
-						and
-						well defined relationship between the sample frequency $F_s$, the number of samples $N$, the
-						test
-						signal frequency $F_i$, and the number of test signal periods sampled $M$:
+						**Coherent sampling（相干采样）** is to ensure the continuity of sampling and prevent spectral leakage, it guarantees that a sample set (a series of samples which represent analog signal) has a fixed and well defined relationship between the sample frequency $F_s$, the of samples $N$, the test signal frequency $F_i$, and the number of test signal periods sampled $M$:
 
 						$$
 						\frac{M}{N}=\frac{F_i}{F_s}
@@ -406,70 +390,63 @@
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221007142019.png)
 
 						The tester will carry the stored captured signal to the DSP processor through data buses.
-					</textarea>
-				</section>
+					</textarea
+            >
+          </section>
+        </section>
 
+        <!--   -->
+        <section>
+          <section data-markdown>
+            <textarea data-template> </textarea>
+          </section>
+        </section>
 
-			</section>
+        <!-- 分隔符 -->
 
+        <section data-markdown>
+          `$$ J(\theta_0,\theta_1) = \sum_{i=0} $$`
+        </section>
+      </div>
+    </div>
 
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/math/math.js"></script>
 
-			<!--   -->
-			<section>
-				<section data-markdown>
-					<textarea data-template>
-					</textarea>
-				</section>
-			</section>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        autoPlayMedia: true,
+        // Learn about plugins: https://revealjs.com/plugins/
 
+        // 切换过渡效果
+        // none-无/fade-渐变/slide-飞入/convex-凸面/concave-凹面/zoom-缩放
+        transition: "convex",
 
+        // 切换过渡速度
+        // default-中速/fast-快速/slow-慢速
+        transitionSpeed: "fast", // default/fast/slow
 
+        markdown: {
+          smartypants: true,
+        },
 
+        // 预加载幻灯片数
+        viewDistance: 3,
 
-			<!-- 分隔符 -->
-
-			<section data-markdown>
-				`$$ J(\theta_0,\theta_1) = \sum_{i=0} $$`
-			</section>
-
-
-
-		</div>
-	</div>
-
-	<script src="dist/reveal.js"></script>
-	<script src="plugin/notes/notes.js"></script>
-	<script src="plugin/markdown/markdown.js"></script>
-	<script src="plugin/highlight/highlight.js"></script>
-	<script src="plugin/math/math.js"></script>
-
-	<script>
-		// More info about initialization & config:
-		// - https://revealjs.com/initialization/
-		// - https://revealjs.com/config/
-		Reveal.initialize({
-			hash: true,
-			autoPlayMedia: true,
-			// Learn about plugins: https://revealjs.com/plugins/
-
-			// 切换过渡效果
-			// none-无/fade-渐变/slide-飞入/convex-凸面/concave-凹面/zoom-缩放
-			transition: "convex",
-
-			// 切换过渡速度
-			// default-中速/fast-快速/slow-慢速
-			transitionSpeed: "fast", // default/fast/slow
-
-			markdown: {
-				smartypants: true
-			},
-
-			// 预加载幻灯片数
-			viewDistance: 3,
-
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
-		});
-	</script>
-</body>
-
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+        ],
+      });
+    </script>
+  </body>
 </html>
