@@ -28,6 +28,9 @@
       .reveal h3 {
         text-align: left;
       }
+      .reveal h4 {
+        text-align: left;
+      }
     </style>
     <div class="reveal">
       <div class="slides">
@@ -411,10 +414,10 @@
           </section>
         </section>
 
-		<!-- ADC Contents -->
+        <!-- ADC Contents -->
         <section>
-			<section data-markdown>
-			  <textarea data-template>
+          <section data-markdown>
+            <textarea data-template>
 
 				# ADC Contents
 
@@ -429,6 +432,10 @@
 				---
 
 				Though ADC's ideal transfer function should be a straight line, but actually is a uniform staircase, that the number of steps corresponds to the number of digital output codes. Since analog is continuous and digital is discrete, quantization error will be introduced in the procedure.
+
+				Note:
+				因为是把模拟信号变成数字信号，从连续到离散会引入量化误差。
+				---
 				
 				## Static Parameters
 				
@@ -441,6 +448,10 @@
 				- Differential Non-Linearity Error (DNE or DNL)
 				- Integral Non-Linearity Error (INE or INL)
 				
+				Note:
+				这些是 ADC 一些主要的静态参数。
+				---
+
 				### LSB Size
 				
 				The width of one step is defined as 1 **Least Significant Bit (LSB)**. The resolution of an ADC is normally expressed as number of bits (digital output code). An ADC with an n-bit resolution has $2^n$ possible digital codes ($2^n$ step levels).
@@ -450,6 +461,11 @@
 				$$
 				
 				For an ideal ADC, LSB represents all of the each code's width.
+
+				Note:
+				
+				---
+
 				
 				### Full Scale Range (FSR)
 				
@@ -459,15 +475,27 @@
 				- 7 transitions
 				- 6 steps between 7 transitions
 				
+				Note:
+				
+				---
+
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008151344.png)
 				
 				- **Zero Scale Range Transition Voltage ($V_{ZST}$)**: Voltage of the analog input signal when the first transition is recorded.
 				- **Full Scale Range Transition Voltage ($V_{FST}$)**: Voltage of the analog input signal when the last transition is recorded.
 				- **Full Scale Range (FSR)**: Maximum extreme of the analog input signal supplied to the ADC. $FSR = (V_{FST}-V_{ZST}) + 2 LSB$, $V_{FSR(refer to VZS)} = (V_{FST}-0.5LSB)-(V_{ZST}-0.5LSB) + 2 LSB$
+								
+				Note:
 				
+				---
+
 				### Offset Error
 				
 				**Offset Error** (Zero-Scale Error) is the difference between ideal and actual offset (initial) points. It is measured from the midpoint of the zero step (ideal to actual) for the ADC.
+								
+				Note:
+				
+				---
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008154521.png)
 				
@@ -476,11 +504,19 @@
 				$$
 				V_{ZS}=V_{ZST}-0.5LSB
 				$$
+								
+				Note:
 				
+				---
+
 				### Gain Error
 				
 				**Gain Error** is the difference between ideal and actual gain points on the transfer function (after the offset error has been corrected to zero). It is measured from the midpoint of the full step for the ADC.
+								
+				Note:
 				
+				---
+
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008155259.png)
 				
 				Where
@@ -488,11 +524,19 @@
 				$$
 				V_{FS}=V_{FST}-0.5LSB+2LSB
 				$$
+								
+				Note:
 				
+				---
+
 				### Differential Non-Linearity Error (DNL)
 				
 				**Differential Non-Linearity Error (DNL)** is the difference between an actual step width and an ideal step width (1 LSB). It's a measure of "small-signal" linearity error, and is measured from the difference in the analog input voltage between 2 adjacent transitions and the device's average LSB.
+								
+				Note:
 				
+				---
+
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008160020.png)
 				
 				Equations to describe DNL:
@@ -504,21 +548,37 @@
 				$$
 				DNL=(V_{in2}-V_{in1})-LSB_{average}
 				$$
+								
+				Note:
 				
+				---
+
 				another image to decribe DNL:
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008161707.png)
 				
 				If DNL exceeds is too large, one or more codes will be missing and never receive an output.
+								
+				Note:
 				
+				---
+
 				### Integral Non-Linearity Error (INL)
 				
 				**Integral Non-Linearity Error (INL)** is the cumulative effect at any given input of all differential non-linearity values. It is a measure of "large-signal" linearity error. INL at any point along the curve is the deviation of the ideal linearity line.
+								
+				Note:
 				
+				---
+
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008163705.png)
 				
 				The deviations are measured at the transition points from one step to the next for the ADC. INL is the deviation of the values of the actual step function to the ideal straight line function.
+								
+				Note:
 				
+				---
+
 				Equations to describe INL:
 				
 				$$
@@ -528,53 +588,95 @@
 				$$
 				INL=[(\frac{BinaryCode}{2^{bits}-1})(V_{FS}-V_{ZS})+V_{offset}]-CodeCentor
 				$$
+								
+				Note:
 				
+				---
+
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008163911.png)
+								
+				Note:
 				
+				---
+
 				## How to Test Static Parameters
+								
+				Note:
 				
+				---
+
 				### Test System Setup
 				
 				Test system setup for ADC static parameter tests:
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008184721.png)
+								
+				Note:
 				
+				---
+
 				Since the ADC voltage-to-code transfer curve is a many-to-one mapping function:
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008185819.png)
+								
+				Note:
 				
+				---
+
 				We use linear ramp histogram method (code width measurement) practically. The input ramp is slow enough to give a statistically relevant "number of hits per code".
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008190154.png)
+								
+				Note:
 				
+				---
+
 				Block diagram of signal setup:
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008190612.png)
+								
+				Note:
 				
+				---
+
 				### Tests Concept
-				
-				Procedure of testing the static parameters of an ADC DUT is listed below.
-				
+
 				#### 1. Make a ramp wave segment for AC SRC
 				
 				The input ramps goes above and below ±Fs to assure that all codes are covered:
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008193036.png)
+												
+				Note:
 				
+				---
+
 				#### 2. Take data between the start (min+1, e.g. 0…01) and the end (max-1, e.g. 1…10) of the ramp. That gives $2^n – 2$ codes' worth of data
 				
 				Voltage applied must be wider than the full-scale range to cover all transitions. 16 steps in-between each code transition is shown below:
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008194207.png)
+												
+				Note:
 				
+				---
+
 				for the ideal ADC DUT, 16 output codes are appear in the same times:
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008194450.png)
+												
+				Note:
 				
+				---
+
 				However, a real device will have a count more than 16 times for wider codes, and less than 16 times for narrower ones (But sum of the total occurrence should be still $2^{bits}$ times of 16):
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008194813.png)
+												
+				Note:
 				
+				---
+
 				#### 3. Calculate for DNL for each step
 				
 				$$
@@ -582,9 +684,17 @@
 				$$
 				
 				Where $Hits[i]$ represents the Actual Output Code Count, and $\frac{\sum Hits[i]}{2^n-2}$ represents the Ideal Output Code Count.
+												
+				Note:
 				
+				---
+
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008234157.png)
+												
+				Note:
 				
+				---
+
 				For an example historam graph as shown below:
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008234921.png)
@@ -595,11 +705,19 @@
 				- Idea Output Code Count = (14 +18 +15 + 17+ 17 + 15) / (8 -2 ) = 16.
 				
 				Therefore DNL[1] (Code 001) = (14-16)/16 \* LSB => -0.125 \* LSB.
+												
+				Note:
 				
+				---
+
 				#### 4. Get the max and min DNL
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221008235342.png)
+												
+				Note:
 				
+				---
+
 				#### 5. Calculate for INL for each step
 				
 				INL is the cumulative value of the first DNL to the DNL[i] (except zero and full scale DNL):
@@ -613,7 +731,11 @@
 				$$
 				INL[0]=INL[FullScale]=0
 				$$
+												
+				Note:
 				
+				---
+
 				For an example graph below,
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009201547.png)
@@ -630,17 +752,19 @@
 				INL[3] = DNL[3] + DNL[2] + DNL[1] \\
 				INL[3]= 0.0625 * LSB
 				$$
+												
+				Note:
 				
+				---
+
 				#### 6. Get the max and min INL
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009201838.png)
 
 			  </textarea
-			  >
-			</section>
-		  </section>
-
-
+            >
+          </section>
+        </section>
 
         <!--   -->
         <section>
