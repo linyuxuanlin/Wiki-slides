@@ -336,17 +336,13 @@
 
 						<small><b>Arbitrary Waveform Generator (AWG)</b> is a low distortion signal generator. It contains a DAC to generate an analog signal from the digital data.</small>
 						
-						<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221006175627.png" style="height: 450px;" />
+						<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221006175627.png" style="height: 350px;" />
+
+						<small>(Low Pass Filter) is to smooth the waveform and remove high frequency components. A set of data points for a given waveshape is stored in the waveform source memory each time a clock occurs, a data point will pass to the DAC.</small>
 
 						Note:
 						任意信号发生器实际上是个 DAC，能通过输入的数字信号生成一个模拟信号。
 						---
-
-						LPF (Low Pass Filter) is to smooth the waveform and remove high frequency components. A set of
-						data
-						points for a given waveshape is stored in the waveform source memory, each time a clock occurs,
-						a
-						data point will pass to the DAC.
 
 						Important parameters of AWG:
 
@@ -357,17 +353,21 @@
 						- Output Impedance
 						- Noise, THD, SNR
 
+						Note:
+						WD 实际上是个 ADC，能通过输入的模拟信号生成一系列数字样本值。
+						---
+
 						### Waveform Digitizer (WD)
 
-						**Waveform Digitizer (WD)** samples analog signals, and converts them into digital values. It
-						performs the opposite operation to the AWG. It converts analog signal into digital samples that
-						represent the original analog signal.
+						<small><b>Waveform Digitizer (WD)</b> samples analog signals, and converts them into digital values. It performs the opposite operation to the AWG. It converts analog signal into digital samples that represent the original analog signal.</small>
 
-						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221006180242.png)
+						<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221006180242.png" style="height: 350px;" />
 
-						The low-pass filter limits the bandwidth of the signal in order to remove unwanted frequency
-						components like noise and spurs, also provides anti-aliasing by attenuating spurs that would be
-						aliased into the pass band of the filter during the ADC conversion.
+						<small>The low-pass filter limits the bandwidth of the signal in order to remove unwanted frequency components like noise and spurs, also provides anti-aliasing by attenuating spurs that would be aliased into the pass band of the filter during the ADC conversion.</small>
+
+						Note:
+						WD 的主要参数有这些。
+						---
 
 						Important parameters of WD:
 
@@ -378,11 +378,17 @@
 						- Input Impedance
 						- Noise, THD, SNR, spur
 
+						Note:
+						这些是 WD 的主要参数。
+						---
+
 						### Clock
 
-						The analog and digital clocks are derived from a system wide reference clock. If there is no
-						clock
-						synchronization signal, the timing offset may lead to incorrect results.
+						The analog and digital clocks are derived from a system wide reference clock. If there is no clock synchronization signal, the timing offset may lead to incorrect results.
+
+						Note:
+						模拟和数字的时钟都是从系统时钟分出来的。
+						---
 
 						### Digital Signal Processor (DSP)
 
