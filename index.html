@@ -63,8 +63,7 @@
 
 						## Sampling Theory
 
-						<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20220929094314.png"
-							style="height: 400px;" />
+						<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20220929094314.png" style="height: 400px;" />
 
 						Sampling theory applies to the signal to be periodic, or errors will be introduced.
 
@@ -82,27 +81,19 @@
 						F_s≥2F_i
 						$$
 
-						We must sample at a rate higher than twice the highest frequency of interest, to be able to
-						recreate
-						a signal from its samples and avoid losing information.
+						We must sample at a rate higher than twice the highest frequency of interest, to be able to recreate a signal from its samples and avoid losing information.
 
 						Note:
 						奈奎斯特定理规定采样频率必须是最高信号频率的两倍以上，这样才能保底还原出原来的信号。
 						---
 
-						If we sample at a frequency that lower that the Nyquist rate, it will exhibit a phenomenon
-						called
-						**aliasing（混叠）**(unwanted components) when we try to convert it back to a continuous time
-						signal,
-						and some of the frequencies in the original signal may be lost.
+						If we sample at a frequency that lower that the Nyquist rate, it will exhibit a phenomenon called **aliasing（混叠）**(unwanted components) when we try to convert it back to a continuous time signal, and some of the frequencies in the original signal may be lost.
 
 						Note:
 						如果采样频率达不到这个数值，在还原信号时就有可能产生混叠现象，无法准确还原出原信号。
 						---
 
-						To minimize aliasing problem, we need to remove the frequency greater than $\frac{F_s}{2}$ of
-						the
-						signal, via the anti-aliasing filter (e.g. low-pass-filter):
+						To minimize aliasing problem, we need to remove the frequency greater than $\frac{F_s}{2}$ of the signal, via the anti-aliasing filter (e.g. low-pass-filter):
 
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20220930154335.png)
 
@@ -124,23 +115,24 @@
 						\frac{M}{N}=\frac{F_i}{F_s}
 						$$
 
+						Note:
+						相干采样就是用来避免频谱泄露，它规定了采样频率、测试信号的频率、样本数和采样周期数的关系。
 						---
 
+						The total time required to take all samples is called the **Unit Test Period (UTP)** and requires $M$ cycles of the test signal, which has frequency $F_i$.
 
-						The total time required to take all samples is called the **Unit Test Period (UTP)** and
-						requires
-						$M$ cycles of the test signal, which has frequency $F_i$.
-
+						Note:
+						采样一轮需要的总时间称为 UTP，需要 M 个周期的信号。
 						---
 
-						For an example, if we want to calculate the $F_s$ of continuous repeating sinewave, where $F_i$
-						is
-						1kHz, $M=3$ and $N=16$:
+						For an example, if we want to calculate the $F_s$ of continuous repeating sinewave, where $F_i$ is 1kHz, $M=3$ and $N=16$:
 
-						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20220930164712.png)
+						<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20220930164712.png" style="height: 350px;" />
 
 						So we can conclude that $F_s=5.333kHz$.
 
+						Note:
+						举个例子，如果信号频率为 1kHz，采样周期数为3，样本数为16，那么就能得出采样频率应该为 5.333kHz，这样就能避免频谱泄露。
 						---
 
 						Important tips of coherent sampling:
@@ -148,18 +140,18 @@
 						- Increasing $M$ and/or $N$ will increase both accuracy and test time.
 						- $M$ and $N$ needs to be an integer.
 						- $N$ needs to be a power of 2 when using Fast Fourier Transform (FFT).
-						- $M$ and $N$ are recommended to be mutually prime（互质）so that each sample gives unique
-						information.
-						Described in the following.
+						- $M$ and $N$ are recommended to be mutually prime（互质）so that each sample gives unique information. Described in the following.
 
+						Note:
+						相干采样需要注意的点是，M 和 N 必须为整数，如果是用快速傅里叶变换，那么 N 需要是 2 的幂，而且最好 M 和 N 是互质的，这样可以避免重复，采到更多的信息。
 						---
 
-						If $M$ and $N$ are not mutually prime ($M=3,N=12$), samples are taken at the same position in
-						every
-						cycle, so there is no new information:
+						If $M$ and $N$ are not mutually prime ($M=3,N=12$), samples are taken at the same position in every cycle, so there is no new information:
 
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20220930170300.png)
 
+						Note:
+						如果 M 和 N 不互质，就是这样的，每个周期都采同样位置的点。
 						---
 
 						If $M$ and $N$ aremutually prime ($M=3,N=16$), so they are mutually prime and every sample is
@@ -167,16 +159,20 @@
 
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20220930170343.png)
 
+						Note:
+						如果 M 和 N 是互质的，像这样，就能采到波形更多的细节。
 						---
 
 						## Common Frequency Analysis Algorithms
 
+						Note:
+						接下来我们看一些常用的参数。
+						---
+
 						For $N$ time-domain signal samples, there are $N$ frequency-domain signal values, and there are
 						$N/2$ frequency-domain power spectrum values.
 
-						---
-
-						A typical spectral components example is shown below:
+						<small>A typical spectral components example is shown below:</small> 
 
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221002145846.png)
 
