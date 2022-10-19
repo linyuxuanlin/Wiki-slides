@@ -64,16 +64,22 @@
 
 						Note:
 						混合信号处理通常包括模拟和数字信号处理，这类型的设备主要有ADC、DAC、模拟开关之类的。
-						
-						在现实世界中我们接触的通常是模拟信号，像声音温度，他们在时间和幅度上都是连续的，如果我们要对它们进行采集和处理，就需要把它们变成离散的数字信号。
+
+						在现实世界中我们接触的通常是模拟信号，像声音温度，他们在时间和幅度上都是连续的，如果我们要对它们进行采集和处理，就需要把它们变成离散的数字信号。需要注意的是，模拟量是有无限的分辨率，但转化为数字量后，就会丢失掉一些精度了。
+
 						---
 
 						## Sampling Theory
 
-						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20220929094314.png)
+						<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20220929094314.png"
+							style="height: 400px;" />
 
 						Sampling theory applies to the signal to be periodic, or errors will be introduced.
 
+						Note:
+						从模拟量到数字量，首要的步骤是采样，可以看到这是采样过程的简图。
+
+						另外，采样定理要求是信号必须是周期性的。
 						---
 
 						### Nyquist Theorem
@@ -88,6 +94,8 @@
 						recreate
 						a signal from its samples and avoid losing information.
 
+						Note:
+						奈奎斯特定理规定采样频率必须是最高信号频率的两倍以上，这样才能保底还原出原来的信号。
 						---
 
 						If we sample at a frequency that lower that the Nyquist rate, it will exhibit a phenomenon
@@ -96,6 +104,8 @@
 						signal,
 						and some of the frequencies in the original signal may be lost.
 
+						Note:
+						如果采样频率达不到这个数值，在还原信号时就有可能产生混叠现象，无法准确还原出原信号。
 						---
 
 						To minimize aliasing problem, we need to remove the frequency greater than $\frac{F_s}{2}$ of
