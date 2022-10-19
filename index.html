@@ -114,6 +114,8 @@
 
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20220930154335.png)
 
+						Note:
+						一种减少混叠影响的方法是，加抗混叠低通滤波器，把高于 1/2 采样频率的信号给滤掉。
 						---
 
 						### Coherent Sampling
@@ -122,6 +124,8 @@
 						leakage（频谱泄露）**
 						will occur.
 
+						Note:
+						接下来介绍相干采样，也叫连贯性采样。它存在的理由是，在快速傅里叶变换时，如果一个采样不连续，拼接的时候就会导致频谱泄露。
 						---
 
 						**Coherent sampling（相干采样）** is to ensure the continuity of sampling and prevent spectral
