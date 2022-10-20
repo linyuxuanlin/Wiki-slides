@@ -938,7 +938,7 @@
 						- Integral Non-Linearity Error (INE or INL)
 						
 						Note:
-						
+						DAC 的静态参数主要有这些。
 						---
 
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011144045.png)
@@ -952,17 +952,17 @@
 						**Zero Scale Output** is the measured output value when the zero/null level digital input code is presented to the DUT.
 						
 						Note:
-						
+						Zero Scale Output 是输入零位数字码时，DAC 输出的电压。
 						---
 
 						### Full Scale Range (FSR)
 						
 						Range of DAC output voltage between the minimum ($V_{ZS}$) and maximum ($V_{FS}$) analog outputs is called **Full Scale Range (FSR)**:
 						
-						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011142249.png)
+						<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011142249.png" style="height: 400px;" />
 						
 						Note:
-						
+						DAC 的 FSR 是从零到满量程输出的范围。
 						---
 
 						### LSB Size
@@ -974,7 +974,7 @@
 						$$
 						
 						Note:
-						
+						LSB 可以由 FSR 计算得来。
 						---
 
 						### Offset Error
@@ -985,10 +985,10 @@
 						OffsetError=V_{ZS(Actual)}-V_{ZS(ideal)}
 						$$
 						
-						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011144415.png)
+						<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011144415.png" style="height: 400px;" />
 						
 						Note:
-						
+						Offset Error 是输入数字初始值时，实际与理想的电压的偏差。
 						---
 
 						### Gain Error
@@ -1010,7 +1010,7 @@
 						$$
 						
 						Note:
-						
+						Gain Error 可以用理想 FSR 减实际 FSR 得到，这是已经把 Offset Error 校准过了。
 						---
 
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011144925.png)
@@ -1045,7 +1045,7 @@
 						
 						**Integral Non-Linearity Error (INL)** is the cumulative effect of all differential non-linearity values.It is a measure of "large-signal" linearity error. INL at any point along the curve is the deviation of the ideal linearity line.
 
-						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011184739.png)
+						<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011184739.png" style="height: 300px;" />
 
 						Note:
 						
@@ -1072,7 +1072,7 @@
 						## How to Test Static Parameters
 						
 						Note:
-						
+						接下来讲 DAC 静态参数的测试流程。
 						---
 
 						### Test System Setup
@@ -1082,16 +1082,17 @@
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011185006.png)
 						
 						Note:
-						
+						DAC 的测试系统，需要输入一系列数字值，再测输出的模拟电压。
 						---
 
+						<!---
 						Block diagram of signal setup:
 						
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011185447.png)
 						
 						Note:
 						
-						---
+						--->
 
 						### Tests Concept
 						
@@ -1100,7 +1101,7 @@
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011185739.png)
 						
 						Note:
-						
+						这是基本的测试流程，从第一个数字码测到最后一个。
 						---
 
 						#### 1. Measure the output voltage by applying the digital data inputs from Zero Scale to Full Scale
@@ -1108,7 +1109,9 @@
 						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011185711.png)
 						
 						Note:
-						
+						这是一个三位的 ADC，如果太多位了，测试时间也会变长，如果要省时间可以只测主要的变化。
+
+						比如 R2R DAC，就测每一位的进位情况。
 						---
 
 						#### 2. Calculate DNL for each input code
@@ -1124,7 +1127,7 @@
 						$$
 						
 						Note:
-						
+						这是 DNL 和 INL 的测试。
 						---
 
 						#### 3. Get the max and min DNL
@@ -1154,7 +1157,7 @@
 				- Inter-modulation Error (IM)
 				
 				Note:
-						
+				DAC 动态参数主要是这些。
 				---
 
 				### Signal to Noise Ratio (SNR)
@@ -1168,7 +1171,7 @@
 				Since SNR is an ratio of power, $20$ in the equation means the square of the ratio of voltage.
 								
 				Note:
-						
+				
 				---
 
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009221450.png)
@@ -1176,7 +1179,7 @@
 				Although the Harmonic Distortion is not included in the measurement of SNR, but the Quantization, Thermal and other residual noise in converter are included.
 								
 				Note:
-						
+				
 				---
 
 				### Total Harmonic Distortion (THD)
@@ -1187,16 +1190,16 @@
 				THD(dB)=20log(\frac{\sqrt{V^2_{2(RMS)}+V^2_{3(RMS)}+...+V^2_{n(RMS)}}}{V_{1(RMS)}}
 				$$
 				
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009225800.png)
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221009225800.png" style="height: 400px;" />
 								
 				Note:
-						
+				
 				---
 
 				## How to Test Dynamic Parameters
 								
 				Note:
-						
+				
 				---
 
 				### Test System Setup
@@ -1208,19 +1211,19 @@
 				Resolution of AC Digitizer should be at least 2 to 4 bits better than DUT.
 								
 				Note:
-						
+				
 				---
 
 				### Tests Concept
 
 				#### 1.Make a continuous input digital data signal (of a Sine wave) with the tester for the DAC to convert
 				
-				It is common practice to ensure that the analog/digital clock are referenced to a common master clock, so that the relationship of the clock sources's frequency is fixed and synchronized, which making test results highly repeatable.
+				<small>It is common practice to ensure that the analog/digital clock are referenced to a common master clock, so that the relationship of the clock sources's frequency is fixed and synchronized, which making test results highly repeatable.</small>
 				
 				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011195204.png)
 								
 				Note:
-						
+				
 				---
 
 				#### 2.Coherently collect a set of samples with the DAC
@@ -1234,7 +1237,7 @@
 				Where $Fs(dut)$ is the samping rate of Digital Source, $Fi$ is signal frequency, $N$ is the number of samples, $M$ is the number of integer cycles.
 								
 				Note:
-						
+				
 				---
 
 				For AC_Digital Capture:
@@ -1246,21 +1249,17 @@
 				Where $Fs$ is the DAC sampling rate also the Digital Capture's sample rate, $Fi$ is the signal frequency, $Ncap$ is the number of samples captured (2x number), $Mc$ is the number of integer cycles (odd).
 								
 				Note:
-						
+				
 				---
 
 				#### 3.Send the collected set of time samples to the DSP to perform DFT / FFT analysis
 				
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011140834.png)
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011140834.png" style="height: 250px;" />
+								
+				<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011140904.png" style="height: 250px;" />
 								
 				Note:
-						
-				---
-
-				![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011140904.png)
-								
-				Note:
-						
+				
 				---
 
 				#### 4.Analyze the frequency bins of interest using equations or tester algorithms for SNR, THD and compare to specification
