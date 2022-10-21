@@ -31,6 +31,9 @@
       .reveal h4 {
         text-align: left;
       }
+      .reveal h5 {
+        text-align: center;
+      }
     </style>
     <div class="reveal">
       <div class="slides">
@@ -39,6 +42,9 @@
           <section data-markdown>
             <textarea data-template>
 						# Mixed Signal Fundamental Review
+
+						##### Slide by Power Lin
+						
 					</textarea
             >
           </section>
@@ -1077,15 +1083,6 @@
 						DAC 的测试系统，需要输入一系列数字值，再测输出的模拟电压。
 						---
 
-						<!---
-						Block diagram of signal setup:
-						
-						![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221011185447.png)
-						
-						Note:
-						
-						--->
-
 						### Tests Concept
 						
 						Procedure of testing the static parameters of an DAC DUT is listed below.
@@ -1315,6 +1312,10 @@
           RevealNotes,
           RevealMath.KaTeX,
         ],
+      });
+      Reveal.configure({
+        showNotes: false,
+        pdfSeparateFragments: false,
       });
     </script>
   </body>
