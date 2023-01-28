@@ -1,0 +1,3369 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>线上评审</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/simple.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- 介绍开始 -->
+        <section>
+          <img
+            data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200723003852.png"
+            style="
+              height: 190px;
+              margin: 0 auto 1rem auto;
+              background: transparent;
+            "
+          />
+          <p></p>
+          <h3>线上评审</h3>
+          <p><small>华广机器人 - 野狼队 - 2020&emsp;&emsp;</small></p>
+        </section>
+        <!-- 介绍结束 -->
+
+        <!-- 战术分析与战术定位开始 -->
+        <section>
+          <section>
+            <h2>战术分析与战术定位</h2>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731010649.png"
+              style="
+                width: 330px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <small style="width: 580px;">
+              <ul>
+                <li>
+                  细读规则后我们认为，资源岛的争夺非常重要，<br />&emsp;一分钟后基本会围绕资源岛增益点展开争夺战
+                </li>
+                <li>同时个高地位置适合远处精准打击和偷血</li>
+                <li>无人能够更早起飞对战况有非常大的优势</li>
+                <li>以往经验而论，比强队我们的远距离打击能力有限</li>
+                <li>英雄机器人狙击点机制使得英雄吊射收益高</li>
+              </ul>
+            </small>
+          </section>
+
+          <section>
+            <p>
+              因此，我们对机器人提出以下要求：
+            </p>
+            <br />
+            <small>
+              <ul>
+                <li>
+                  <b>步兵</b
+                  >：莽夫步兵（双枪管）主要加点主血量副功率：<br />&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;保证贴脸打击优势，更好的争夺资源岛增益点；<br />&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+                  打符步兵（单枪管）加点主射速副功率：保证能打符、<br />&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;偷前哨站血量、在后方防御或辅助莽夫
+                </li>
+                <li>
+                  <b>英雄</b>：以高仰角为设计中心实现吊射：在家偷前哨站血量
+                </li>
+                <li>
+                  <b>工程</b
+                  >：更快的夹取系统、大小弹丸的兼容补给、边救援边补充；<br />&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;让莽夫步兵更快复活稳定局面
+                </li>
+                <li>
+                  <b>哨兵</b
+                  >：双发射确保活力与仰角设计确保有反大弹丸或飞镖的能力
+                </li>
+                <li><b>无人机</b>：更稳定的机构装且能更多子弹：确保火力输出</li>
+                <li><b>飞镖</b>：确保 15 秒打完两发</li>
+                <li><b>雷达</b>：难以实现，暂时不做要求</li>
+              </ul>
+            </small>
+          </section>
+        </section>
+
+        <!-- 战术分析与战术定位结束 -->
+
+        <!-- 机械开始 -->
+        <section>
+          <h2>机械部分</h2>
+        </section>
+
+        <!-- 步兵开始 -->
+
+        <!-- 打符步兵开始 -->
+        <section>
+          <section>
+            <h3>技术内容展示 - 步兵（打符）</h3>
+          </section>
+
+          <section>
+            <h3>一、方案介绍</h3>
+          </section>
+          <section>
+            <h4>战术定位</h4>
+            <br />
+            <span class="fragment">
+              <ul>
+                <small>
+                  <li>
+                    拥有<font color="red"> 激活大神符、吊射远处目标 </font
+                    >的功能
+                  </li>
+                  <li>拥有飞坡功能</li>
+                </small>
+              </ul>
+            </span>
+          </section>
+
+          <section>
+            <h4>整体方案</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801141049.png"
+              style="
+                width: 1200px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+          <section><h4>激活大神符的定位设计</h4></section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801114949.png"
+              style="
+                width: 460px;
+                float: left;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <ul style="float: right; width: 455px;">
+              <small>
+                <li><font color="red"> 加长枪管 </font>提高弹道稳定性</li>
+                <li>
+                  枪管内表面用电泳涂装降低<font color="red"> 表面粗糙度 </font
+                  ><br />&emsp;以减小枪管内壁对弹丸的摩擦
+                </li>
+              </small>
+            </ul>
+          </section>
+
+          <section><h4>飞坡功能的定位设计</h4></section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731203605.png"
+              style="
+                width: 460px;
+                float: left;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <ul style="float: right; width: 455px;">
+              <small>
+                <li>
+                  <font color="red"> 长行程悬挂 </font
+                  >，通过更换劲度系数较大弹簧吸收飞坡的冲击并且保证避震器压缩量不超过最大行程
+                </li>
+                <br />
+                <li>
+                  <font color="red"> 底盘离地距离更高 </font
+                  >，保证飞坡时着地其他机构不会触地
+                </li>
+                <br />
+                <li>
+                  <font color="red"> 压低整车重心 </font>并控制<font
+                    color="red"
+                  >
+                    重心靠近车尾 </font
+                  >处控制飞坡时车身姿态
+                </li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <h4>重要参数</h4>
+          </section>
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>重量</td>
+                  <td>15.687</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td>总体尺寸</td>
+                  <td>594.4*481.9*482.8</td>
+                  <td>(L*W*H)mm</td>
+                </tr>
+                <tr>
+                  <td>轮距</td>
+                  <td>419</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>轴距</td>
+                  <td>416.38</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>悬架行程</td>
+                  <td>44.58</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>重心高度</td>
+                  <td>179.84</td>
+                  <td>mm</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>通过角</td>
+                  <td>20.43</td>
+                  <td>°</td>
+                </tr>
+                <tr>
+                  <td>接近角</td>
+                  <td>70.45</td>
+                  <td>°</td>
+                </tr>
+                <tr>
+                  <td>载弹量</td>
+                  <td>342</td>
+                  <td>发</td>
+                </tr>
+                <tr>
+                  <td>最大连续射频</td>
+                  <td>18</td>
+                  <td>发/s</td>
+                </tr>
+                <tr>
+                  <td>云台俯仰角</td>
+                  <td>-30~+30</td>
+                  <td>°</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <h3>二、模型展示及参数讲解</h3>
+          </section>
+          <section>
+            <h4>模型细节及爆炸安装</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E4%BA%91%E5%8F%B0%E7%88%86%E7%82%B8-%E6%AD%A3%E8%A7%86.gif"
+              style="width: 430px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E4%BA%91%E5%8F%B0%E7%88%86%E7%82%B8.gif"
+              style="width: 430px; background: transparent;"
+            />
+            &nbsp;&nbsp;<img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E5%BA%95%E7%9B%98%E7%88%86%E7%82%B8.gif"
+              style="width: 430px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E5%BA%95%E7%9B%98%E7%88%86%E7%82%B8-%E4%BE%A7%E8%A7%86.gif"
+              style="width: 430px; background: transparent;"
+            />
+          </section>
+
+          <section>
+            <h4>整体参数</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801104308.png"
+              style="width: 300px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801104316.png"
+              style="width: 500px; background: transparent;"
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801104546.png"
+              style="width: 280px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801104554.png"
+              style="width: 330px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801104559.png"
+              style="width: 250px; background: transparent;"
+            />
+          </section>
+          <section>
+            <h4>轴系剖面图</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801104930.png"
+              style="width: 400px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801104937.png"
+              style="width: 450px; background: transparent;"
+            />
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801105211.png"
+              style="width: 300px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801105225.png"
+              style="width: 350px; background: transparent;"
+            />
+            &nbsp;&nbsp;<img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801105231.png"
+              style="width: 300px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801105236.png"
+              style="width: 350px; background: transparent;"
+            />
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801105418.png"
+              style="width: 350px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801105423.png"
+              style="width: 300px; background: transparent;"
+            />
+            &nbsp;&nbsp;<img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801105407.png"
+              style="width: 600px; background: transparent;"
+            />
+          </section>
+          <section>
+            <h4>仿真分析</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801105645.png"
+              style="width: 350px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801105652.png"
+              style="width: 350px; background: transparent;"
+            />
+            &nbsp;&nbsp;<img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801105657.png"
+              style="width: 350px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801105703.png"
+              style="width: 350px; background: transparent;"
+            />
+            <p style="white-space: pre-line;">
+              <small>
+                对悬挂件进行有限元分析后更高部分模型特征使得最大变形从
+                0.1mm&nbsp;减小到 0.074mm， 减小了 26%， 最大应力从 33MPa
+                减小到&nbsp;27.7MPa，减小了 16%
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801110332.png"
+              style="width: 400px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801110339.png"
+              style="width: 400px; background: transparent;"
+            />
+            <br /><br />
+            <p>
+              优化位置
+            </p>
+          </section>
+
+          <section>
+            <h3>三、实际运动展示</h3>
+          </section>
+          <section>
+            <h4>机器人各向运动</h4>
+          </section>
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E7%A7%BB%E5%8A%A8/%E5%81%9C%E8%BD%A6-%E7%82%B9%E5%A4%B4.mp4"
+              style="width: 300px; float: left;"
+              loop="loop"
+            ></video>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E7%A7%BB%E5%8A%A8/%E5%90%AF%E5%8A%A8-%E6%8A%AC%E5%A4%B4.mp4"
+              style="width: 300px; margin: 0 auto;"
+              position:relative;right:50%
+              loop="loop"
+            ></video>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E7%A7%BB%E5%8A%A8/%E5%B9%B3%E7%A7%BB-%E5%81%9C%E8%BD%A6.mp4"
+              style="width: 300px; float: right;"
+              loop="loop"
+            ></video>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E7%A7%BB%E5%8A%A8/%E5%B9%B3%E7%A7%BB-%E5%90%AF%E5%8A%A8.mp4"
+              style="width: 300px; float: left;"
+              loop="loop"
+            ></video>
+            &nbsp;&nbsp;&nbsp;&nbsp;<video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E7%A7%BB%E5%8A%A8/%E6%89%AD%E8%85%B0.mp4"
+              style="width: 300px; margin: 0 auto;"
+              loop="loop"
+            ></video>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E7%A7%BB%E5%8A%A8/%E8%87%AA%E6%97%8B.mp4"
+              style="width: 300px; float: right;"
+              loop="loop"
+            ></video>
+            <br /><br />
+
+            <p>
+              <small
+                >停车-点头 / 启动-抬头 / 平移-停车 / 平移-启动 / 扭腰 /
+                自旋</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <h4>悬挂极限性能</h4>
+          </section>
+
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E6%82%AC%E6%8C%82%E6%9E%81%E9%99%90%E6%80%A7%E8%83%BD/%E4%B8%80%E8%BD%AE%E4%B8%8B%E5%9D%8E.mp4"
+              style="width: 400px;"
+              loop="loop"
+            ></video>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E6%82%AC%E6%8C%82%E6%9E%81%E9%99%90%E6%80%A7%E8%83%BD/%E5%BF%AB%E9%80%9F-%E4%B8%A4%E8%BD%AE%E4%B8%8B%E5%9D%8E.mp4"
+              style="width: 400px;"
+              loop="loop"
+            ></video>
+            &nbsp;&nbsp;&nbsp;<video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E6%82%AC%E6%8C%82%E6%9E%81%E9%99%90%E6%80%A7%E8%83%BD/%E6%85%A2%E6%85%A2%E4%B8%8B%E5%9D%8E.mp4"
+              style="width: 400px;"
+              loop="loop"
+            ></video>
+            <br /><br />
+            <p>
+              <small>一轮下坎 / 快速-两轮下坎 / 慢慢下坎&emsp;&emsp; </small>
+            </p>
+          </section>
+
+          <section>
+            <h4>最高射频</h4>
+          </section>
+
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E5%B0%84%E9%A2%91/8-15.mp4"
+              style="width: 270px;"
+              loop="loop"
+            ></video>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E5%B0%84%E9%A2%91/8-15-%E6%85%A2%E6%94%BE.mp4"
+              style="width: 270px;"
+              loop="loop"
+            ></video>
+            <br /><br />
+            <p>
+              <small>最高射频 / 慢放&emsp;&emsp; </small>
+            </p>
+          </section>
+          <section>
+            <h4>飞坡</h4>
+          </section>
+
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E9%A3%9E%E5%9D%A1/%E9%A3%9E%E5%9D%A1-%E5%90%8E%E8%BD%AE%E5%BF%AB.mp4"
+              style="width: 400px;"
+              loop="loop"
+            ></video>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E9%A3%9E%E5%9D%A1/%E9%A3%9E%E5%9D%A1-%E9%87%8D%E5%BF%83%E5%89%8D%E7%A7%BB.mp4"
+              style="width: 400px;"
+              loop="loop"
+            ></video>
+            &nbsp;&nbsp;<video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E9%A3%9E%E5%9D%A1/%E9%A3%9E%E5%9D%A1-%E9%87%8D%E5%BF%83%E5%90%8E%E7%A7%BB-2.mp4"
+              style="width: 400px;"
+              loop="loop"
+            ></video>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E9%A3%9E%E5%9D%A1/%E9%A3%9E%E5%9D%A1-%E9%87%8D%E5%BF%83%E5%90%8E%E7%A7%BB.mp4"
+              style="width: 400px;"
+              loop="loop"
+            ></video>
+            <br /><br />
+            <p>
+              <small>
+                飞坡-后轮快 / 飞坡-重心前移 / 飞坡-重心后移 /
+                飞坡-重心后移&emsp;&emsp;
+              </small>
+            </p>
+          </section>
+        </section>
+        <!-- 打符步兵结束 -->
+
+        <!-- 莽夫步兵开始 -->
+        <section>
+          <section>
+            <h3>技术内容展示 - 步兵（莽夫）</h3>
+          </section>
+
+          <section>
+            <h3>一、方案介绍</h3>
+          </section>
+          <section>
+            <h4>战术定位</h4>
+            <br />
+            <span class="fragment">
+              <ul>
+                <small>
+                  <li>
+                    <font color="red"> 双枪管 </font
+                    >发射机构<br />&emsp;（可迅速输出近距离目标）
+                  </li>
+                  <li>拥有<font color="red"> 飞坡 </font>功能</li>
+                </small>
+              </ul>
+            </span>
+          </section>
+
+          <section>
+            <h4>整体方案</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801141230.png"
+              style="
+                width: 1200px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+          <section><h4>双枪管的定位设计</h4></section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731203136.png"
+              style="
+                width: 450px;
+                float: left;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <ul style="float: right; width: 472px;">
+              <small>
+                <li><font color="red"> 横向并排双枪管 </font>的发射机构</li>
+                <li>
+                  枪管内表面采用电泳涂装<font color="red"> 降低表面粗糙度 </font
+                  ><br />&emsp;以减小枪管内壁对弹丸的摩擦
+                </li>
+                <li>
+                  <font color="red"> Pitch 轴采用同步带传动 </font
+                  >适配导电滑环尺寸
+                </li>
+              </small>
+            </ul>
+          </section>
+
+          <section><h4>飞坡功能的定位设计</h4></section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731203605.png"
+              style="
+                width: 460px;
+                float: left;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <ul style="float: right; width: 455px;">
+              <small>
+                <li>
+                  <font color="red"> 长行程悬挂 </font
+                  >，通过更换劲度系数较大弹簧吸收飞坡的冲击并且保证避震器压缩量不超过最大行程
+                </li>
+                <br />
+                <li>
+                  <font color="red"> 底盘离地距离更高 </font
+                  >，保证飞坡时着地其他机构不会触地
+                </li>
+                <br />
+                <li>
+                  <font color="red"> 压低整车重心 </font>并控制<font
+                    color="red"
+                  >
+                    重心靠近车尾 </font
+                  >处控制飞坡时车身姿态
+                </li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <h4>重要参数</h4>
+          </section>
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>重量</td>
+                  <td>16.932</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td>总体尺寸</td>
+                  <td>594.4*481.9*475</td>
+                  <td>(L*W*H)mm</td>
+                </tr>
+                <tr>
+                  <td>轮距</td>
+                  <td>419</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>轴距</td>
+                  <td>416.38</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>悬架行程</td>
+                  <td>44.58</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>重心高度</td>
+                  <td>180.50</td>
+                  <td>mm</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>通过角</td>
+                  <td>20.43</td>
+                  <td>°</td>
+                </tr>
+                <tr>
+                  <td>接近角</td>
+                  <td>70.45</td>
+                  <td>°</td>
+                </tr>
+                <tr>
+                  <td>载弹量</td>
+                  <td>352</td>
+                  <td>发</td>
+                </tr>
+                <tr>
+                  <td>最大连续射频</td>
+                  <td>36</td>
+                  <td>发/s</td>
+                </tr>
+                <tr>
+                  <td>云台俯仰角</td>
+                  <td>-30~+30</td>
+                  <td>°</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <h3>二、模型展示及参数讲解</h3>
+          </section>
+          <section>
+            <h4>模型细节及爆炸安装</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E8%8E%BD%E5%A4%AB-%E7%88%86%E7%82%B8%E8%A7%86%E5%9B%BE-%E4%BE%A7%E8%A7%86.gif"
+              style="width: 600px; background: transparent;"
+            />
+            &nbsp;&nbsp;<img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%AD%A5%E5%85%B5/%E8%8E%BD%E5%A4%AB-%E7%88%86%E7%82%B8%E8%A7%86%E5%9B%BE.gif"
+              style="width: 600px; background: transparent;"
+            />
+          </section>
+
+          <section>
+            <h4>整体参数</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731225934.png"
+              style="width: 300px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731230026.png"
+              style="width: 500px; background: transparent;"
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801104546.png"
+              style="width: 280px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801104554.png"
+              style="width: 330px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801104559.png"
+              style="width: 250px; background: transparent;"
+            />
+          </section>
+
+          <section>
+            <h4>亮点结构</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801102601.png"
+              style="width: 310px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801102626.png"
+              style="width: 380px; background: transparent;"
+            />
+            <br />
+            <br />
+            <p>带传动 Pitch 轴</p>
+          </section>
+        </section>
+        <!-- 莽夫步兵结束 -->
+        <!-- 步兵结束 -->
+
+        <!-- 英雄开始 -->
+        <section>
+          <section>
+            <h3>技术内容展示 - 英雄</h3>
+          </section>
+
+          <section>
+            <h3>一、方案介绍</h3>
+          </section>
+          <section>
+            <h4>战术定位</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728140559.png"
+              style="
+                width: 550px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br />
+            <p>
+              <small>
+                英雄在比赛中一般承担<font color="red"
+                  >&nbsp;攻打敌方建筑物，给敌方单位致命一击的作用</font
+                >。在本届比赛中，英雄具有<font color="red"
+                  >&nbsp;下供弹&nbsp;</font
+                >功能，一个大发射，有较小的体积，极高的灵活度。可在团队中承担<font
+                  color="red"
+                  >&nbsp;远程推塔&nbsp;</font
+                >的作用，<font color="red">吊射&nbsp;</font
+                >前哨站和基地的作用，团战中承担后方输出收割的作用。较轻的重量也有助于它完成<font
+                  color="red"
+                  >&nbsp;飞坡&nbsp;</font
+                >偷袭的任务。
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <h4>整体方案</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728141434.png"
+              style="
+                width: 600px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+
+          <section>
+            <h4>方案 - 底盘</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728141633.png"
+              style="
+                width: 670px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br />
+            <p style="white-space: pre-line;">
+              <small>
+                &emsp;&emsp;底盘内支撑架采用<font color="red"> 井字形布置 </font
+                >，一周<font color="red">&nbsp;放置导轮以防刮蹭 </font
+                >。<br />为了提高越野能力，达到飞坡要求，采用类似于步兵的<font
+                  color="red"
+                  >&nbsp;纵式悬挂 </font
+                >，<br />调软弹簧，以落地吸震
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <h4>方案 - 供弹机构</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728142124.png"
+              style="
+                width: 400px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728142052.png"
+              style="
+                width: 400px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br />
+            <br />
+            <p style="white-space: pre-line;">
+              <small>
+                &emsp;&emsp;因拨箱巨大而无法 3D 打印，所以采用<font color="red"
+                  >&nbsp;玻纤板加铝柱层层相叠 </font
+                >而成，<br />经过多次防卡弹实验迭代而成现在形状。拨盘用&nbsp;3580&nbsp;电机驱动，其出口处<br />用合页防止弹丸倒流，拨弹起始端有斜坡打印件使弹丸能顺利退出
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728142139.png"
+              style="
+                width: 400px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            /><img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728142336.png"
+              style="
+                width: 400px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <p style="white-space: pre-line;">
+              <small>
+                为了使机器人不必升高补弹，我们采用了<font color="red"
+                  >&nbsp;仓门侧开&nbsp;</font
+                >的方案
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <h4>方案 - 发射机构</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728143105.png"
+              style="
+                width: 350px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728143252.png"
+              style="
+                width: 450px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br />
+            <p>
+              <small>
+                发射机构可以说是整车设计最复杂的一个部分，经反复迭代而成。弹丸采用<font
+                  color="red"
+                >
+                  弹轨输送 </font
+                >，为了实现超高的吊射仰角，我们采用了两个弧形的活动导轨来连接转动的发射口和固定的弹轨；而在后方用两个电机平衡前面的重量。
+              </small>
+            </p>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728143149.png"
+              style="
+                width: 550px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <p style="white-space: pre-line;">
+              <small>
+                发射机构外用&nbsp;PVC&nbsp;板龙形外壳全面包裹，保护内部设备。
+                （该发射机构上一代的实物发射情况请见下文视频）
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <h4>重要参数</h4>
+          </section>
+
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>重量</td>
+                  <td>20.1</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td>整体尺寸</td>
+                  <td>742 * 696 * 485</td>
+                  <td>(L*W*H)mm</td>
+                </tr>
+                <tr>
+                  <td>最大速度</td>
+                  <td>3.05</td>
+                  <td>m/s</td>
+                </tr>
+                <tr>
+                  <td>加速度</td>
+                  <td>3</td>
+                  <td>m/s^2</td>
+                </tr>
+                <tr>
+                  <td>轮距</td>
+                  <td>427.5</td>
+                  <td>mm</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>轴距</td>
+                  <td>426.5</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>悬架行程</td>
+                  <td>36</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>重心高度</td>
+                  <td>197</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>通过角</td>
+                  <td>26</td>
+                  <td>°</td>
+                </tr>
+                <tr>
+                  <td>接近角</td>
+                  <td>36</td>
+                  <td>°</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>载弹量</td>
+                  <td>60</td>
+                  <td>发</td>
+                </tr>
+                <tr>
+                  <td>发射延迟</td>
+                  <td>0.3</td>
+                  <td>s</td>
+                </tr>
+                <tr>
+                  <td>命中率</td>
+                  <td>60</td>
+                  <td>%</td>
+                </tr>
+                <tr>
+                  <td>最大连续射频</td>
+                  <td>250</td>
+                  <td>发/min</td>
+                </tr>
+                <tr>
+                  <td>云台俯仰角</td>
+                  <td>-24~+51</td>
+                  <td>°</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <h3>二、模型展示及参数讲解</h3>
+          </section>
+          <section>
+            <h4>模型细节及爆炸安装</h4>
+          </section>
+          <section
+            data-transition="slide"
+            data-background="#4285F4"
+            data-background-transition="zoom"
+          >
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E8%8B%B1%E9%9B%84/%E8%A3%85%E9%85%8D.GIF"
+              style="width: 600px;"
+            />
+          </section>
+
+          <section>
+            <h4>整体参数</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728145654.png"
+              style="
+                width: 345px;
+                float: left;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728150305.jpg
+              "
+              style="
+                width: 610px;
+                float: right;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+
+          <section>
+            <h4>轴系剖面图</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731014850.png
+              "
+              style="
+                width: 400px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731014933.png
+              "
+              style="
+                width: 450px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+
+          <section>
+            <h4>仿真分析</h4>
+          </section>
+
+          <section>
+            <h4>轮板拓扑优化</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728150759.png
+              "
+              style="
+                width: 500px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br /><br />
+            <p>
+              <small>如上图所示，对悬挂轮板拓扑优化，看哪些部位可以镂空</small>
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728151059.png
+              "
+              style="
+                width: 500px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <p style="white-space: pre-line;">
+              <small>
+                英雄车重&nbsp;200N，分散到每个轮板为&nbsp;25N，
+                算上冲击&nbsp;X1.5&nbsp;为&nbsp;38N，用&nbsp;SW&nbsp;拓扑优化，加上约束</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728151325.png
+              "
+              style="
+                width: 500px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br /><br />
+            <p>
+              优化后的结果
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728151441.png
+              "
+              style="
+                width: 500px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br /><br />
+            <p>
+              根据优化结果改进模型
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728151615.png
+              "
+              style="
+                width: 700px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br /><br />
+            <p>
+              经此优化，轮板重量减轻了 20%
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728151726.png
+              "
+              style="
+                width: 600px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br />
+            <p style="white-space: pre-line;">
+              <small>
+                全车还有不少地方采用类似的方法优化，
+                例如固定&nbsp;Pitch&nbsp;轴电机的板</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <h4>飞坡仿真</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E8%8B%B1%E9%9B%84/%E9%A3%9E%E5%9D%A1.gif
+              "
+              style="
+                width: 1000px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br />
+            <p style="white-space: pre-line;">
+              <small>
+                将英雄模型简化，放入&nbsp;Adams&nbsp;中，设置各个模块的重量，用溪地的避震，<br />所以设置弹簧刚度为&nbsp;4N/mm，设轮胎转速为&nbsp;3508&nbsp;电机最大转速&nbsp;400r/min，开始仿真</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <h4>亮点结构 - 下供弹弹轨发射机构</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728152307.png
+              "
+              style="
+                width: 700px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <p style="white-space: pre-line;">
+              <small>
+                该英雄的亮点结构为<font color="red"> 下供弹弹轨发射机构 </font
+                >。<br />本机构为<font color="red"> 自主研发 </font
+                >，经多次试验改进，<br />可以做到较高的射击准确率，近乎零卡弹
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728152819.png
+              "
+              style="
+                width: 410px;
+                float: left;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728152828.png
+              "
+              style="
+                width: 500px;
+
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <p style="white-space: pre-line;">
+              <small>
+                此发射机构优点在于，无论炮管怎么转动，<br />总能<font
+                  color="red"
+                  >&nbsp;保持最优闭合供弹线路，防止卡弹
+                </font>
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728153028.png
+              "
+              style="
+                width: 400px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <p style="white-space: pre-line;">
+              <small>
+                同时，该机构采用<font color="red"> 无枪管发射 </font
+                >，<br />为了保持发射时快响应和严格对中性，
+                在入口处用四个扭簧对中放置进行限位。
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <h3>三、实际运动展示</h3>
+          </section>
+
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E8%8B%B1%E9%9B%84/%E8%8B%B1%E9%9B%84%20%E7%A7%BB%E5%8A%A8.MP4"
+              width="390px"
+            ></video>
+
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E8%8B%B1%E9%9B%84/%E8%8B%B1%E9%9B%84%20%E8%87%AA%E7%9E%84.MP4"
+              width="390px"
+            ></video>
+
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E8%8B%B1%E9%9B%84/%E8%8B%B1%E9%9B%84%20%E5%8F%91%E5%BC%B9.MP4"
+              width="400px"
+            ></video>
+            <br /><br />
+            <p><small>各向运动 / 自瞄 / 射击&emsp;&emsp;</small></p>
+          </section>
+        </section>
+
+        <!-- 英雄结束 -->
+
+        <!-- 工程开始 -->
+        <section>
+          <section>
+            <h3>技术内容展示 - 工程</h3>
+          </section>
+
+          <section>
+            <h3>一、方案介绍</h3>
+          </section>
+
+          <section>
+            <h4>战术定位</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200725222515.png"
+              style="
+                height: 450px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+
+          <section>
+            <h4>整体方案</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728003721.jpg
+            "
+              style="
+                width: 550px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728003902.jpg
+          "
+              style="
+                width: 350px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+
+          <section>
+            <h4>获取大弹丸</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200726140320.jpg
+            "
+              style="height: 400px; background: transparent;"
+            />
+            <br />
+            <p style="white-space: pre-line;">
+              <small>
+                获取第二排中间的弹药箱时，机器人处于极限高度 1050mm，
+                取弹装置处于机器人的中间位置，最上面一层的取弹夹通过气缸向前伸出，
+                此时机器人处于长度 920mm，距离资源岛中线 10mm.</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200726140053.jpg
+            "
+              style="height: 350px; background: transparent;"
+            />
+            <p style="white-space: pre-line;">
+              <small>
+                获取第一排右侧弹药箱时，主要运动为取弹机构平移。
+                取弹机构的移动关联到三个框架，由上到下依次为：<br />
+                取弹夹及伸出框架<br />中间连接传动的框架（<font color="orange"
+                  >橙色</font
+                >）<br />上层的主体框架（<font color="019A98">蓝绿色</font>）
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200726143117.png
+            "
+              style="height: 400px; background: transparent;"
+            />
+            <br />
+            <p style="white-space: pre-line;">
+              <small>
+                （本页展示取资源岛右侧弹药箱时，取弹机构平移的主视图）<br />
+                同步带传动带上两层的框架向右移动， 并最终使取弹夹相对移动 270mm.
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200726143625.jpg"
+              style="height: 380px; background: transparent;"
+            />
+
+            <p style="white-space: pre-line;">
+              <small>
+                （本页展示取资源岛右侧弹药箱时，取弹机构平移的俯视图）<br />
+                为保证机构能正常运动（加工有一定误差），
+                在每层框架间前边，均有导轨滑块进行固定。
+                框架间后边的连接采用长滑车。
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <h4>补给弹丸</h4>
+          </section>
+          <section>
+            <p style="width: 450px; float: right;">
+              <small>
+                针对 20
+                赛季可以在补给站获取小弹丸的规则，工程机器人采用了分弹仓储存弹丸的补给系统：
+                <br />
+                <br />
+                <b>大弹丸补给方式</b
+                ><br />&emsp;&emsp;在上文的取弹系统最上层框架有一排硬质筛管，大弹丸经过时，可以在表面滑过并流入后方的大弹丸入口，即可进入上图所示的上层的大弹仓。
+                <br /><br />
+                <b>小弹丸的补给方式</b
+                ><br />&emsp;&emsp;小弹丸由取弹夹一侧垂直落入，再经过最上层框架的硬质筛管时被漏出，流至右图所示的第二层筛管，最终流入右图中的小弹仓。
+                因为工程和步兵之间横向的距离较大，小弹仓的一边装有气缸，补给时，小弹仓整体可以前伸，再通过与大弹仓相同的连杆机构开盖，完成补给动作。
+              </small>
+            </p>
+            <br /><br /><br /><img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801162025.jpg"
+              style="width: 450px; float: left; margin: 0 auto 1rem auto;"
+            />
+          </section>
+
+          <section>
+            <h4>救援机器人 — 拖车式</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200726154643.png"
+              style="height: 400px; background: transparent;"
+            />
+            <br />
+            <p style="white-space: pre-line;">
+              <small>
+                在第二代工程机器人的基础上，改用气缸作为动力的两个连杆机构，
+                气缸收缩时，最外边的板由竖直状态变为略向下倾斜，
+                找到被救援的机器人后，使气缸恢复至初始状态，
+                钩住被救援机器人外层的防护杆，实现救援。</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727212740.png"
+              style="width: 576px; background: transparent;"
+            />
+            <br />
+            <p style="white-space: pre-line;">
+              <small>
+                连杆机构后端的气缸固定在底盘框架上，
+                连杆固定点由板件连接至框架，保证了机构的稳定性。</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <h4>救援机器人 — 交互卡式</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727213259.png"
+              style="width: 450px; background: transparent;"
+            />
+            <br />
+            <p style="white-space: pre-line;">
+              <small>
+                交互机构在底盘的底部中间（<font color="F8A7C6">粉色区域</font
+                >）， <br />由导轨及两边的板件稳定连接在底盘的板上
+                （使用方法在后文动画展示）</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <h4>重要参数</h4>
+          </section>
+
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>初始尺寸</td>
+                  <td>630 * 720 * 680</td>
+                  <td>(L*W*H)mm</td>
+                </tr>
+                <tr>
+                  <td>极限尺寸</td>
+                  <td>920 * 845 *1050</td>
+                  <td>(L*W*H)mm</td>
+                </tr>
+                <tr>
+                  <td>最大速度</td>
+                  <td>未测量</td>
+                  <td>m/s</td>
+                </tr>
+                <tr>
+                  <td>加速度</td>
+                  <td>未测量</td>
+                  <td>m/s^2</td>
+                </tr>
+                <tr>
+                  <td>轮距</td>
+                  <td>415</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>轴距</td>
+                  <td>550</td>
+                  <td>mm</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>悬架行程</td>
+                  <td>未测量</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>重心高度</td>
+                  <td>335</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>载弹量（大弹丸）</td>
+                  <td>150</td>
+                  <td>发</td>
+                </tr>
+                <tr>
+                  <td>载弹量（小弹丸）</td>
+                  <td>600</td>
+                  <td>发</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <h3>二、模型展示及参数讲解</h3>
+          </section>
+          <section>
+            <h4>模型三视图</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200726162641.png"
+              style="
+                width: 450px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200726162721.png"
+              style="
+                width: 320px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200726162801.png"
+              style="
+                width: 430px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200726162845.png"
+              style="
+                width: 350px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+
+          <section>
+            <h4>机构动画展示 — 弹箱机构</h4>
+          </section>
+
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%B7%A5%E7%A8%8B/%E5%BC%B9%E7%AE%B1.mp4"
+            ></video>
+            <br /><br />
+            <p><small>取弹后将弹药箱弹出，避免影响下一次取弹</small></p>
+          </section>
+
+          <section>
+            <h4>机构动画展示 — 小弹仓</h4>
+          </section>
+
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%B7%A5%E7%A8%8B/%E5%B0%8F%E5%BC%B9%E4%BB%93.mp4"
+            ></video>
+            <p><small>由气缸控制的弹仓底部连杆机构，实现开盖</small></p>
+          </section>
+
+          <section>
+            <h4>机构动画展示 — 拖车机构</h4>
+          </section>
+
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%B7%A5%E7%A8%8B/%E6%8B%96%E8%BD%A6%E6%9C%BA%E6%9E%84.mp4"
+            ></video>
+            <p>
+              <small
+                >由气缸控制的连杆机构，实现放下钩子及钩住被救援机器人的外层保护杆</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <h4>机构动画展示 — 交互系统</h4>
+          </section>
+
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%B7%A5%E7%A8%8B/%E4%BA%A4%E4%BA%92%E7%B3%BB%E7%BB%9F.mp4"
+            ></video>
+
+            <p style="white-space: pre-line;">
+              <small>
+                由无杆气缸与导轨滑块组成，在长板件的最前段固定场地交互卡，
+                随着无杆气缸的移动，长板件后端离开小胶轮，在重力的作用下下落，
+                至前端两个胶轮接触地面时，场地交互卡处于与场地表面平行的状态。</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <h4>模型细节及爆炸安装</h4>
+          </section>
+
+          <section
+            data-transition="slide"
+            data-background="#0F9D58"
+            data-background-transition="zoom"
+          >
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%B7%A5%E7%A8%8B/%E7%88%86%E7%82%B8%E5%9B%BE.gif"
+              style="margin: 0 auto 1rem auto; background: transparent;"
+            />
+          </section>
+
+          <section>
+            <h4>亮点结构 - 优化取弹效率</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727213940.png"
+              style="
+                width: 650px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <p style="white-space: pre-line;">
+              <small>
+                （上图所示为一代工程机器人的取弹机构）
+                在取资源岛到第二排弹药箱时，取弹夹通过气缸的作用前伸，
+                夹住弹药箱后如果直接翻转，弹丸会掉入空隙，
+                只有收回气缸，才能将大弹丸倒入弹仓内。
+                相似的原因，在取两边的弹药箱时，弹仓不跟随取弹夹平移，
+                只能在取完一箱后，取弹夹回到和弹仓对齐的初始位置，
+                再倒入弹丸，取弹过程在恢复初始位置上浪费时间。</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727214726.png"
+              style="
+                width: 650px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <p style="white-space: pre-line;">
+              <small>
+                本页所示为工程机器人第二代所使用的取弹机构，
+                其在取两边弹药箱的平移方式上，<br />和一代采用了相同的同步带方案，
+                但优化了储存弹丸的步骤。</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727214726.png"
+              style="
+                width: 650px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <p style="white-space: pre-line;">
+              <small>
+                在取资源岛第二排弹药箱时， 取弹爪伸出的部分夹了一排硬质筛管，
+                可以使大弹丸沿管流入后方弹仓，无需收回气缸。<br />中间框架（<font
+                  color="orange"
+                  >橙色</font
+                >）后方的左右分别有一块挡板，
+                在获取两边弹药箱时，即使取弹爪不在中间，大弹丸将暂存在板上，
+                取弹夹完成取弹回归中间时，弹丸可以随之掉落在弹仓内。
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <h3>三、实际运动展示</h3>
+          </section>
+          <section>
+            <h4>机器人各向运动</h4>
+
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%B7%A5%E7%A8%8B/%E8%BF%90%E5%8A%A8.mp4"
+            ></video>
+            <p>
+              <small
+                >（前文展示的均为第二代工程机器人，视频中为第一代，拍摄于 2020
+                年 1 月）</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%B7%A5%E7%A8%8B/%E5%8F%96%E5%A4%A7%E5%BC%B9%E4%B8%B8.mp4"
+              width="455px"
+              style="float: left;"
+            ></video>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%B7%A5%E7%A8%8B/%E6%95%91%E6%8F%B4%EF%BC%88%E6%AD%A5%E5%85%B5%EF%BC%89.MP4"
+              width="455px"
+            ></video>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%B7%A5%E7%A8%8B/%E6%95%91%E6%8F%B4%EF%BC%88%E8%8B%B1%E9%9B%84%EF%BC%89.MP4"
+              width="455px"
+              style="float: left;"
+            ></video>
+            &nbsp;&nbsp;&nbsp;&nbsp;<video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%B7%A5%E7%A8%8B/%E4%BA%A4%E6%8E%A5%EF%BC%88%E8%8B%B1%E9%9B%84%EF%BC%89.MP4"
+              width="455px"
+            ></video>
+            <br /><br />
+            <p>
+              <small>
+                获取大弹丸 / 救援机构展示-救援步兵 / 救援英雄 /
+                交接展示&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <h4>机器人布线</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727221731.png"
+              style="margin: 0 auto 1rem auto; background: transparent;"
+            />
+          </section>
+
+          <section>
+            <h4>研发进度说明</h4>
+          </section>
+          <section>
+            <p style="white-space: pre-line;">
+              <small>
+                一代工程机器人的部分机构在使用过程中存在问题。
+                根据一代出现的问题，我们在二代的模型中做如下的优化：</small
+              >
+            </p>
+            <img
+              width="600"
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727222001.png"
+              style="margin: 0 auto 1rem auto; background: transparent;"
+            />
+
+            <p>
+              <small>
+                （优化后的二代工程机器人三维模型已完成，因疫情原因暂无法出实物）</small
+              >
+            </p>
+          </section>
+        </section>
+        <!-- 工程结束 -->
+
+        <!-- 无人机开始 -->
+        <section>
+          <section>
+            <h3>技术内容展示 - 无人机</h3>
+          </section>
+
+          <section>
+            <h3>一、方案介绍</h3>
+          </section>
+          <section>
+            <h4>战术定位</h4>
+            <br />
+            <span class="fragment">
+              <ul>
+                <small>
+                  <li>吊射前哨站</li>
+                  <li>击打地面目标</li>
+                </small>
+              </ul>
+            </span>
+          </section>
+          <section>
+            <h4>整体方案</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200723150832.png"
+              style="
+                height: 450px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br />
+            <ul>
+              <small>
+                <li>整体使用插销结构，减少螺丝的使用量</li>
+                <li>
+                  使用转盘轴承分担云台重量（因使用下挂式弹仓，防止重量集中于电机）
+                </li>
+                <li>使用更轻量化的电池仓（M600Pro）减轻重量</li>
+              </small>
+            </ul>
+          </section>
+          <section>
+            <h4>重要参数</h4>
+          </section>
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>重量</td>
+                  <td>10.321</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td>总体尺寸</td>
+                  <td>1323*1323*958</td>
+                  <td>(L*W*H)mm</td>
+                </tr>
+                <tr>
+                  <td>轴距</td>
+                  <td>1023.3</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>枪管仰角</td>
+                  <td>19</td>
+                  <td>°</td>
+                </tr>
+                <tr>
+                  <td>枪管俯角</td>
+                  <td>52.81</td>
+                  <td>°</td>
+                </tr>
+                <tr>
+                  <td>载弹量</td>
+                  <td>655</td>
+                  <td>发</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <h3>二、模型展示及参数讲解</h3>
+          </section>
+          <section>
+            <h4>模型细节及爆炸安装</h4>
+          </section>
+
+          <section
+            data-transition="slide"
+            data-background="#EAB547"
+            data-background-transition="zoom"
+          >
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/drone-explosion.mp4"
+            ></video>
+          </section>
+
+          <section>
+            <h4>螺旋桨保护罩的设计</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200723163016.png"
+              style="
+                width: 300px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200723162924.png"
+              style="
+                width: 335px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200728003526.jpg
+              "
+              style="
+                height: 330px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <p>
+              <small>
+                螺旋桨外围留有小孔，可穿过鱼线，保护螺旋桨&emsp;&emsp;&emsp;&emsp;
+              </small>
+            </p>
+          </section>
+          <section>
+            <h4>吊射前哨站的定位设计</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200723163553.png"
+              style="
+                height: 450px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br />
+            <p>
+              <small
+                >使用铝合金的枪管固定座，可有效减小枪管抖动，提高射击精度&emsp;&emsp;</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <h4>云台的定位设计</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200723163729.png"
+              style="
+                height: 450px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br />
+            <ul>
+              <small>
+                <li>
+                  采用下挂式弹仓，减小供弹道的长度，减少弹丸的遗留与卡弹问题
+                </li>
+                <li>
+                  通过使用转盘轴承，防止云台和弹仓的重量全部集中在 6020 电机上面
+                </li>
+                <li>摩擦轮加上保护罩，防止敌方弹丸卡住摩擦轮</li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <h4>整体参数</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200723151740.png"
+              style="
+                width: 350px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200723151645.png"
+              style="
+                width: 350px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731013228.png"
+              style="
+                height: 350px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731013351.png"
+              style="
+                height: 350px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+          <section>
+            <h4>亮点结构</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/chaxiao.gif"
+              alt=""
+            />
+            <p>
+              <small>通过插销代替螺丝，省掉连接零件和若干螺丝，减轻重量</small>
+            </p>
+          </section>
+
+          <section>
+            <h3>三、实际运动展示</h3>
+          </section>
+
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E9%A3%9E%E8%A1%8C%E8%A7%86%E9%A2%91%20%E5%89%AA%E8%BE%91%E5%A5%BD.mp4"
+            ></video>
+          </section>
+        </section>
+        <!-- 无人机结束 -->
+
+        <!-- 哨兵开始 -->
+        <section>
+          <section>
+            <h3>技术内容展示 - 哨兵</h3>
+          </section>
+
+          <section>
+            <h3>一、方案介绍</h3>
+          </section>
+          <section>
+            <h4>战术定位</h4>
+          </section>
+          <section>
+            <p>
+              在前哨站被摧毁后生存下来，并确保防御增益的存在
+            </p>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731191244.png"
+              style="
+                width: 500px;
+                float: left;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <ul style="float: right; width: 400px;">
+              <small>
+                <li>
+                  底盘采用轻量化设计。以板拼接为主同时采用一对骨架承重的设计，大大减少了管材的使用数量，以便减轻整车体重，让哨
+                  兵能够跑的更快
+                </li>
+                <br />
+                <li>
+                  底盘采用一轮主动，两轮夹紧从动的三轮布局，在减轻重量的同时，单电机驱动在功率不变的情况下获得更高的出力，同样
+                  保证了哨兵的移动速度
+                </li>
+              </small>
+            </ul>
+          </section>
+          <section>
+            <p>
+              能够有效阻挡对方地面力量前进， &emsp; &emsp;
+              <br /><br /><br /><br />
+
+              &emsp;&emsp;&nbsp;杀伤欲进攻基地 / 登上环形高地的敌方力量
+            </p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731192233.png"
+              style="
+                width: 500px;
+                float: left;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <ul style="float: right; width: 420px;">
+              <small>
+                <li>
+                  近 2700cm^3
+                  容积的弹舱保证可以装载规则允许上限数量的弹丸，保证赛场上的弹药充足
+                </li>
+                <br />
+                <li>
+                  采用双枪管来保证射速上的压制，&emsp;摩擦轮竖置减小两炮管间距，增大两炮管能击打到同以装甲版（以小装甲板为目标）的机率：枪管内表面采用精加工低表面粗糙度以减小枪
+                  管内壁对弹丸的摩擦
+                </li>
+                <br />
+                <li>
+                  预留仰角以及摄像头下置（红框内）使得哨兵也可以通过吊射的方式打击试图登上环形高地的敌方等较远距离目标
+                </li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <h4>整体方案</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731192629.png"
+              style="
+                width: 500px;
+                float: left;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <ul style="float: right; width: 420px;">
+              <small>
+                <br />
+                <li>
+                  采用侧驱方式移动
+                </li>
+                <br />
+                <li>
+                  采用双枪管设置
+                </li>
+                <br />
+                <li>
+                  采用弹舱下置的布局
+                </li>
+                <br />
+                <li>云台部分采用导电滑环的 360° 云台</li>
+                <br />
+                <li>框架用板拼接为主，管拼接为辅搭建</li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <h4>重要参数</h4>
+          </section>
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>重量</td>
+                  <td>9.418</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td>总体尺寸</td>
+                  <td>447.89*366.77*574.13</td>
+                  <td>(L*W*H)mm</td>
+                </tr>
+                <tr>
+                  <td>轮距</td>
+                  <td>200（轨道左侧）</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>重心高度</td>
+                  <td>51.161</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>载弹量</td>
+                  <td>500</td>
+                  <td>发</td>
+                </tr>
+                <tr>
+                  <td>俯仰角</td>
+                  <td>+15~-90</td>
+                  <td>°</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <h3>二、模型展示及参数讲解</h3>
+          </section>
+          <section>
+            <h4>模型细节及爆炸安装</h4>
+          </section>
+          <section
+            data-transition="slide"
+            data-background="#4285F4"
+            data-background-transition="zoom"
+          >
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%93%A8%E5%85%B5/%E7%88%86%E7%82%B8.gif"
+              style="
+                width: 1000px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+          <section>
+            <h4>整体参数</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731194057.png"
+              style="
+                width: px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+          <section>
+            <p>整体参数 - 快拆</p>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%93%A8%E5%85%B5/%E5%BF%AB%E6%8B%86.gif"
+              style="
+                width: 500px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731194249.png"
+              style="
+                width: 1000px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+          <section>
+            <h4>轴系剖面图</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731194511.png"
+              style="
+                width: 450px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731194525.png"
+              style="
+                width: 450px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731194555.png"
+              style="
+                width: 500px;
+                float: left;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+
+          <section>
+            <h4>亮点结构</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731195332.png"
+              style="
+                width: px;
+                float: left;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+        </section>
+        <!-- 哨兵结束 -->
+
+        <!-- 飞镖开始 -->
+        <section>
+          <section>
+            <h3>技术内容展示 - 飞镖</h3>
+          </section>
+          <section>
+            <h3>一、方案介绍</h3>
+          </section>
+          <section>
+            <h4>战术定位</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727134515.png"
+              style="
+                height: 450px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br />
+            <ul>
+              <small>
+                <li>关键时刻精准击打前哨站与基地</li>
+                <li>创造进攻的机会</li>
+              </small>
+            </ul>
+          </section>
+          <section>
+            <h4>整体方案</h4>
+          </section>
+          <section>
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%95%B4%E4%BD%93%E6%96%B9%E6%A1%88.mp4"
+            ></video>
+            <br />
+            <ul>
+              <small>
+                <li>
+                  按照规则极限摆放空间预留小间隙定制大板做到精确摆放初始位置
+                </li>
+                <li>通过多次实测确定打前哨站与基地两方向差值参数</li>
+              </small>
+            </ul>
+          </section>
+          <section>
+            <h4>换弹系统</h4>
+          </section>
+          <section>
+            <img
+              height="300"
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727175911.png"
+              alt=""
+            />
+            <img
+              height="350"
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727175923.png"
+              alt=""
+            />
+            <br />
+            <br />
+            <ul>
+              <small>
+                <li>升降旋转式装填飞镖</li>
+                <li>转动配合上下移动做到不阻碍发射路径</li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <video
+              height="700"
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E6%8D%A2%E5%BC%B9.mp4"
+            ></video>
+          </section>
+          <section>
+            <h4>发射系统</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727180040.png"
+              style="
+                height: 300px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br /><br />
+            <ul>
+              <small>
+                <li>动力源：工业橡皮筋或拉力弹簧</li>
+                <li>上膛姿态保持：电磁铁吸附</li>
+              </small>
+            </ul>
+          </section>
+          <section>
+            <h4>方向控制系统</h4>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727180409.png"
+              style="
+                height: 200px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727180545.png"
+              style="
+                height: 200px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727180633.png"
+              style="
+                height: 300px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br />
+            <ul>
+              <small>
+                <li>仰角控制：丝杆机构（电机驱动）+ 连杆架构</li>
+                <li>Yaw 轴控制：齿轮（电机驱动）+ 内齿轮</li>
+              </small>
+            </ul>
+          </section>
+          <section>
+            <h4>重要参数</h4>
+          </section>
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>重量</td>
+                  <td>2.17</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td>总体尺寸</td>
+                  <td>730*365*639</td>
+                  <td>(L*W*H)mm</td>
+                </tr>
+                <tr>
+                  <td>重心高度</td>
+                  <td>112</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>最低仰角</td>
+                  <td>+18.26</td>
+                  <td>°</td>
+                </tr>
+                <tr>
+                  <td>最高仰角</td>
+                  <td>+49.60</td>
+                  <td>°</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>数据</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Yaw 轴可转角度</td>
+                  <td>360</td>
+                  <td>°</td>
+                </tr>
+                <tr>
+                  <td>载弹量</td>
+                  <td>4</td>
+                  <td>发</td>
+                </tr>
+                <tr>
+                  <td>发射跑道长度</td>
+                  <td>360</td>
+                  <td>mm</td>
+                </tr>
+                <tr>
+                  <td>最大反射拉紧力</td>
+                  <td>40</td>
+                  <td>kg</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727181020.png"
+              style="height: 290px; float: left; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727180959.png"
+              style="height: 290px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727181128.png"
+              style="height: 290px; float: left; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727181148.png"
+              style="height: 290px; background: transparent;"
+            />
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727181643.png"
+              style="
+                height: 350px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727181708.png"
+              style="
+                height: 100px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727181656.png"
+              style="
+                height: 200px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+          <section>
+            <h3>二、模型展示及参数讲解</h3>
+          </section>
+          <section>
+            <h4>模型细节及爆炸安装</h4>
+          </section>
+
+          <section
+            data-transition="slide"
+            data-background="#DB4437"
+            data-background-transition="zoom"
+          >
+            <video
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E9%A3%9E%E9%95%96%E7%88%86%E7%82%B82.mp4"
+            ></video>
+          </section>
+
+          <section>
+            <h4>轴系剖面图</h4>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727182029.png"
+              style="
+                width: 440px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727182038.png"
+              style="
+                width: 460px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200727182013.png"
+              style="width: 400px; background: transparent;"
+            />
+          </section>
+        </section>
+        <!-- 飞镖结束 -->
+        <!-- 机械结束 -->
+
+        <!-- 嵌入式/硬件开始 -->
+        <section>
+          <section>
+            <h2>嵌入式 & 硬件部分</h2>
+          </section>
+          <section>
+            <h3>一、软硬件资源分配</h3>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200726191224.png"
+              style="margin: 0 auto 1rem auto; background: transparent;"
+            />
+          </section>
+
+          <section>
+            <h3>二、硬件框图</h3>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200731114150.png"
+              style="margin: 0 auto 1rem auto; background: transparent;"
+            />
+          </section>
+
+          <section>
+            <h3>三、软件框架 / 流程图</h3>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801125610.png"
+              style="margin: 0 auto 1rem auto; background: transparent;"
+            />
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801125656.png"
+              style="margin: 0 auto 1rem auto; background: transparent;"
+            />
+          </section>
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801125717.png"
+              style="margin: 0 auto 1rem auto; background: transparent;"
+            />
+          </section>
+
+          <section>
+            <h3>四、解决问题的经历</h3>
+          </section>
+
+          <section>
+            <ul>
+              <small>
+                <li>
+                  <b>问题背景</b
+                  >：双发射步兵需要短时间内进行高射频射击，从而有效地击杀目标机器人。
+                </li>
+                <li>
+                  <b>问题背景</b
+                  >：双发射步兵需要短时间内进行高射频射击，从而有效地击杀目标机器人。
+                </li>
+                <li>
+                  <b>遇到问题</b
+                  >：拨弹结构的精度不高，高速转动的过程中会出现卡弹的情况。
+                </li>
+                <li><b>尝试解决方案</b>：机械组不断改进拨盘结构。</li>
+                <li>
+                  <b>出现问题</b
+                  >：发现卡弹的原因主要是因为，当拨弹速度过快时，密集的弹丸会从各个缝隙进入弹位孔，而而由于转速过快，导致弹丸还没有完全进入弹位，最终导致拨弹装置停滞。
+                </li>
+                <li>
+                  <b>问题反思</b
+                  >：我们考虑从拨盘的动力源来优化，于是另辟蹊径，我们从解决电机转动问题入手，如果发生了卡弹后，如何让拨弹装置迅速恢复正常供弹。
+                </li>
+                <li>
+                  <b>尝试解决方案</b
+                  >：逻辑上反转，让电机将拨弹装置反转，从而将弹丸回滚。
+                </li>
+                <li>
+                  <b>出现问题</b
+                  >：卡弹的问题不仅会让电机无法向送弹的方向转动，还可能会让电机无法反转，从而物理上损坏电机。
+                </li>
+                <li>
+                  <b>问题反思</b
+                  >：由于卡弹情况的概率性不可计算，所以我们则需要知道在何时卡弹，以便快速进行调整。
+                </li>
+                <li>
+                  <b>最终解决方案</b>：我们多次尝试过后，决定采用 M2006
+                  的真实速度作为参考，当转动过程中出现低于设定值后，则被大致认为出现卡弹，并利用真实速度小于设定速度值的时间累计值作为判断标准，当时间大于所设定阈值，则被确定为真正的卡弹，反之，若时间累计值不足以达到设定值则仅为电机掉速情况。判断为出现卡弹过后则进而执行电机来回转动，直到M2006电机真实速度回升到正常水平则取消卡弹任务。
+                </li>
+                <li>
+                  <b>最终结果</b
+                  >：目前阶段测试而言，只有不断的向运动的反方向以一定频率进行来回转动，才能保证电机在各个方向上，不会因为卡弹而导致拨弹装置的停滞，此方案极为有效，在随后的调试中都未发现在弹量充足的情况下出现断供的现象。
+                </li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <h3>五、特色功能</h3>
+          </section>
+
+          <section>
+            <p>
+              <small
+                >由于机器人出现问题的时候并不能马上确定问题所在，于是编写了一个报警系统来更快速的查看问题根源。
+              </small>
+            </p>
+            <span class="fragment fade-up" style="display: inline-block;">
+              <p>
+                <small
+                  >思路如下：初始化一个定时器，<font color="red"
+                    >每 20ms 执行一次中断</font
+                  >。中断里加入我们自行编写的检测函数
+                  DevicesMonitor_update()，相当于每 20ms 执行一次这个函数。<font
+                    color="red"
+                    >进入检测函数后便开始检测各种设备是否在线，每一个外设成功接收到一次数据就会有一个标志位
+                    +1，检测函数就是检测标志位数据是否大于 1，若大于 1
+                    可以认为该设备在线，就清零标志位； 若小于 1
+                    就可以认为该设备离线</font
+                  >，并设定每种外设优先级，输入到 Device_setAlertType()
+                  函数里进行优先级处理，<font color="red"
+                    >依据优先级高的可以把优先级低的先暂时覆盖。
+                    检测到设备离线后蜂鸣器和 LED 灯会一起报警</font
+                  >，比如优先级设定为 4，蜂鸣器就每隔 100ms 连续响 4 下，LED
+                  灯亮 4 盏；若有多个设备一起离线，优先显示优先级高的。
+                </small>
+              </p>
+            </span>
+            <span class="fragment fade-up" style="display: inline-block;">
+              <p>
+                <small>
+                  提升：方便在赛场和平时调试中直接找到问题所在，不用一步步排除，极大提高了效率。
+                </small>
+              </p>
+            </span>
+          </section>
+
+          <section>
+            <h3>六、自研硬件模块介绍</h3>
+          </section>
+
+          <section>
+            <p style="width: 455px; float: right; white-space: pre-line;">
+              超级电容控制模块
+
+              <small>
+                <b>功能：</b
+                >对超级电容组的充放电控制、输入电流检测、超级电容电压检测、CAN&nbsp;通信<br />
+                超级电容组充电采用恒流充电的方式，最大可支持&nbsp;10A&nbsp;电流，最大可充至&nbsp;26V，充电最大功率&nbsp;120W<br />
+                超级电容最低输出电量为&nbsp;9V，低于&nbsp;9V&nbsp;则自动切换为电池供电。故超级电容电压从&nbsp;9V~21V&nbsp;均等划分为&nbsp;0~100%，因此会有可能会出现负电量和超过&nbsp;100%&nbsp;电量的情况</small
+              >
+            </p>
+            <br /><img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200802220414.png"
+              style="background: transparent; width: 400px; float: left;"
+            />
+          </section>
+          <section>
+            <p>
+              超级电容组
+              <br /><br /><br /><br /><br /><br />
+              &emsp;&emsp;&emsp;
+              <small>
+                按照规则的要求，对电容&nbsp;2.7V/25F&nbsp;的电容单体通过两并十串的方式组合成一组不大于&nbsp;2000J&nbsp;的电容组。同时有十组过压保护电路分别并联在每组电容上，若电容单体电压超过&nbsp;2.7V，则电路导通，释放能量从而保护超级电容单体不会因过压而损坏。</small
+              >
+            </p>
+          </section>
+          <section>
+            <p style="width: 455px; float: right;">
+              LM5176 电源模块
+              <br /><br /><br /><br />
+              <small>
+                采用LM5176电源芯片的同步开关稳压模块，给小电脑进行供电。该模块可承受
+                10~30V 的输入电压，而稳定输出 19.5V；最大输出电流可达
+                15A；同时最大效率可达 92%。输出部分采用 104 mlcc、4.7uF mlcc
+                以及 47uF
+                固态电容相结合的滤波电路，可以使波纹减少到最小。更该模块虽然比普通的
+                buck 模块增加了不少元器件，但解决了 buck 模块在电压不足 20V
+                时无法正常输出 19.5V 而导致小电脑自动断电关机的问题。</small
+              >
+            </p>
+            <br /><img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200802222116.png"
+              style="background: transparent; width: 450px; float: left;"
+            />
+          </section>
+        </section>
+        <!-- 嵌入式/硬件结束 -->
+
+        <!-- 算法开始 -->
+        <section>
+          <section>
+            <h2>算法部分</h2>
+          </section>
+
+          <section>
+            <h3>一、算法框图</h3>
+          </section>
+
+          <section><p>主体框架</p></section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801172008.png"
+              style="background: transparent;"
+            />
+          </section>
+
+          <section><p>装甲板识别</p></section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200729002250.png"
+              style="
+                width: 900px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+            <br /><br /><br />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200801172152.png"
+              style="
+                width: 700px;
+                margin: 0 auto 1rem auto;
+                background: transparent;
+              "
+            />
+          </section>
+
+          <section><p>能量机关识别</p></section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200729002410.jpg"
+              style="width: 500px; float: left; background: transparent;"
+            />
+            <br />
+            <ul style="float: right;">
+              <small>
+                <li>模式切换</li>
+                <li>预处理</li>
+                <li>扇叶灯条以及装甲板灯条</li>
+                <li>旋转方向</li>
+                <li>大、小能量机关</li>
+                <li>R 作为圆心绘制圆形轨迹</li>
+                <li>pnp 解算得出云台的旋转角度</li>
+                <li>自动射击决策</li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <h3>二、算法功能介绍</h3>
+          </section>
+
+          <section>
+            <h4>装甲识别</h4>
+          </section>
+
+          <section>
+            <p>
+              1. 预处理
+            </p>
+            <br />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200729153736.png"
+              style="width: 400px; background: transparent;"
+            />
+
+            <p style="white-space: pre-line;">
+              <small>
+                利用膨胀、腐蚀处理图像后，<br />根据装甲板的颜色对图像选择红蓝通道
+                进行分合处理筛选出需要的颜色后再进行一次中值处理</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <p>
+              2. 寻找灯条轮廓
+            </p>
+            <br />
+
+            <p style="white-space: pre-line;">
+              <small>
+                利用在灰度图和 HSV 图像找到的轮廓，
+                根据逻辑判断是否为正确的灯条，<br />将正确的灯条轮廓储存到矩形里面
+              </small>
+            </p>
+          </section>
+
+          <section>
+            <p>
+              3. 逻辑筛选灯条
+            </p>
+            <br />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200729155600.png"
+              style="width: 300px; background: transparent;"
+            />
+            <ul>
+              <small>
+                <li>先区分出左右灯条</li>
+                <li>求出左右灯条的面积比例、灯条高度差、灯条间的距离差</li>
+                <li>
+                  利用这三者的数据，在其他地方进行逻辑回归，<br />&emsp;&nbsp;&nbsp;求出合适的权重，再放回这里筛选出进一步两个合适的灯条
+                </li>
+                <li>
+                  根据灯条之间的角度的逻辑关系，确定出同一装甲板上的两个灯条
+                </li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <p>
+              4. 确定装甲板
+            </p>
+            <br />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200729162846.png"
+              style="width: 400px; background: transparent;"
+            />
+
+            <ul>
+              <small>
+                <li>将前面确定出的两个灯条储存到一个矩形里面</li>
+                <li>再把中心坐标等数据传给下位机进行射击操作</li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <h4>能量机关识别</h4>
+          </section>
+
+          <section>
+            <p>
+              1. 预处理
+            </p>
+            <br />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200729163332.jpg"
+              style="width: 400px; background: transparent;"
+            />
+
+            <ul>
+              <small>
+                <li>
+                  先利用高斯滤波后，对图像根据装甲板颜色进行选择，<br />&emsp;&nbsp;&nbsp;将红蓝通道重新进行分合处理、筛选出所需颜色后再进行一次膨胀处理
+                </li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <p>
+              2. 逻辑筛选目标
+            </p>
+            <br />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200729164701.png"
+              style="width: 400px; background: transparent;"
+            />
+
+            <ul>
+              <small>
+                <li>
+                  根据轮廓的父子关系，筛选出有父轮廓且满足 6 点拟合椭圆的小轮廓
+                </li>
+                <li>对大、小轮廓进行筛选后组合出符合条件的装甲板和叶片</li>
+                <li>对扇叶进行排除法，判断是否为未激活装甲板</li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <p>
+              3. 确定圆心的 R
+            </p>
+            <br />
+
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200729165245.jpg"
+              style="width: 200px; background: transparent;"
+            />
+
+            <ul>
+              <small>
+                <li>
+                  利用已知装甲板的位置对圆心 R 的范围进行 ROI 处理，并通过 ROI
+                  的图像找到圆心 R
+                </li>
+                <li>
+                  利用圆心 R
+                  的位置画出圆形运动轨迹，并根据一定的预测提前量来决定预测点的位置
+                </li>
+                <li>隔帧计算运动差值，从而判断运动方向运动</li>
+              </small>
+            </ul>
+          </section>
+
+          <section>
+            <p>
+              4. 计算相应的提前量
+            </p>
+            <br />
+            <small>
+              <ul>
+                <li>
+                  小能量机关根据平均弹速、机关运行的方位（向上或向下），以给予相应的预测提前量
+                </li>
+                <br />
+                <li>
+                  &emsp;&emsp;大能量机关有两种方案（未实测）
+                  <ul>
+                    <br />
+                    <li>
+                      利用微积分的思想，对大能量机关先进行测速处理，找到对应的周期后利用函数和每帧的运动变化量来得到下一帧的速度，并根据其加速度来计算相应的预测提前量
+                    </li>
+                    <br />
+                    <li>
+                      利用卡尔曼来进行预测，结合官方速度函数，给予当前和预测计算的数据，通过卡尔曼来得到预测提前量的真值
+                    </li>
+                  </ul>
+                </li>
+                <br />
+                <li>将相应的提前量添加到运动轨迹上，即可得到预测点</li>
+              </ul>
+            </small>
+          </section>
+
+          <section>
+            <p>
+              5. 计算相关数据
+            </p>
+            <br />
+            <p><small>利用 PNP 算法将预测点到俯仰角、距离等数据算出</small></p>
+          </section>
+
+          <section>
+            <p>
+              6. 得出结果
+            </p>
+            <br />
+            <p style="white-space: pre-line;">
+              <small>
+                根据机关的运行阶段、图像的状况、射击时间等信息<br />判断是否进行射击，实现自动射击的效果</small
+              >
+            </p>
+          </section>
+
+          <section>
+            <h3>三、实际效果展示</h3>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E7%AE%97%E6%B3%95/%E5%AE%9E%E9%99%85%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA%EF%BC%88%E8%83%BD%E9%87%8F%E6%9C%BA%E5%85%B3%EF%BC%89.gif"
+              style="float: left; width: 450px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E7%AE%97%E6%B3%95/%E5%AE%9E%E9%99%85%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA%EF%BC%88%E8%A3%85%E7%94%B2%E6%9D%BF%E6%89%AD%E8%85%B0%EF%BC%89.gif"
+              style="float: right; width: 450px; background: transparent;"
+            />
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E7%AE%97%E6%B3%95/%E5%AE%9E%E9%99%85%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA%EF%BC%88%E8%A3%85%E7%94%B2%E6%9D%BF%E8%87%AA%E6%97%8B%EF%BC%89.gif"
+              style="float: left; width: 450px; background: transparent;"
+            /><br /><br /><br /><br /><br /><br /><br />
+            <p style="float: right; white-space: pre-line;">
+              <small>
+                能量机关 / 装甲板扭腰 / 装甲板自旋&emsp;&emsp;
+              </small>
+            </p>
+          </section>
+        </section>
+        <!-- 算法结束 -->
+
+        <!-- 其他开始 -->
+        <section>
+          <section>
+            <h2>其他部分</h2>
+          </section>
+
+          <section>
+            <h3>
+              资源岛兼收纳架
+            </h3>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/%E7%BA%BF%E4%B8%8A%E8%AF%84%E5%AE%A1-RM2020/%E5%85%B6%E4%BB%96/image1.gif"
+              style="width: 250px; background: transparent;"
+            />
+            <p style="white-space: pre-line;">
+              <small>
+                成本：<b>580 元</b><br />
+                开源情况：<b>已开源</b
+                ><br /><br />优点：<br />&emsp;1、方便到能带往备赛住处
+                &emsp;2、后续不用该资源岛后，<br />&emsp;可以调节铝型材当纯收纳架
+              </small>
+            </p>
+          </section>
+          <section>
+            <h3>
+              移动装甲板系统
+            </h3>
+          </section>
+
+          <section>
+            <img
+              data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20200730153852.png"
+              style="width: 300px; background: transparent; float: left;"
+            />
+            <br /><br /><br />
+            <ul style="width: 350px;">
+              <small>
+                <li>
+                  通过主控准确控制装甲板移动模式以提供跟随代码实际测试环境
+                </li>
+                <li>
+                  提供操作手练习打击环境
+                </li>
+                <li>提供弹道调整参照</li>
+              </small>
+            </ul>
+          </section>
+        </section>
+        <!-- 其他结束 -->
+
+        <section>
+          <h2>感谢耐心观看！</h2>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        autoPlayMedia: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+
+        // 切换过渡效果
+        // none-无/fade-渐变/slide-飞入/convex-凸面/concave-凹面/zoom-缩放
+        transition: "convex",
+
+        // 切换过渡速度
+        // default-中速/fast-快速/slow-慢速
+        transitionSpeed: "fast", // default/fast/slow
+
+        // 预加载幻灯片数
+        viewDistance: 3,
+
+        // 幻灯片切换时写入浏览器历史记录
+        history: false,
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
