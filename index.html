@@ -48,7 +48,6 @@
 
 Note:
 欢迎大家今天来听我的分享。我今天分享的主题是信号完整性，我会讲一些基本概念，和几种常见的信号完整性问题。我今天只是简单分享狭义的信号完整性，广义的信号完整性其实涵盖了信号和电源完整性，还有电磁兼容性 EMC，。我掌握的知识还不是很深，如果有讲得不好的地方也请大家帮忙指出来。
-
 			</textarea
             >
           </section>
@@ -60,16 +59,18 @@ Note:
             <textarea data-template>
 
 # About signals
-
 ---
 
-……
+- Signals are analog electrical quantities used to transfer information
+  - Often used to represent digital information
+- Signal chain consists of: **transmitter/driver**, **channel/interconnect** and **receiver**
+
+![](https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/202302012326067.png)
 
 Note:
 我们通常用 0 和 1 表示信号，就是像图上画的，电压比这条线高就定义为逻辑 1，比这条线低就定义为逻辑 0。但信号本身是个模拟量，真实世界的数字电平 0 和 1 并不是理想的。
 
-然后，信号传输的链条通常包括三部分：驱动器？，信号互连和接收器？
-						  
+然后，信号传输的链条通常包括三部分：驱动器，信号互连和接收器  
 			</textarea
             >
           </section>
@@ -84,12 +85,30 @@ Note:
 
 ---
 
-……
+<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221210155139.png
+" style="height: 270px;" /> 
+<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221210155202.png
+" style="height: 280px;" />
+
+Most digital data is transmitted as square
+wave signals, which consist of multiple frequency components
 
 Note:
 大多数情况下，信号是方波的形式，这些方波实际上是由多个频率分量的正弦波组成的。叠加的谐波次数越多，方波就会越方。
 
-合格的数据传输，一是要构成方波的所有频率分量都应经历相同的幅度变化，就是说应该被放大或衰减相同的倍数。二是所有频率分量的相位应该保持一致。
+---
+
+Good digital data transmission requires:
+- Constant amplitude change for all
+frequency components
+- Constant time shift / delay for all
+frequency components
+
+If either of these a re not constant, signal
+distortion may occurs.
+
+Note:
+合格的数据传输，一是要构成方波的所有频率分量都应经历相同的幅度变化，就是说应该被放大或衰减相同的倍数。二是所有频率分量的相位应该保持一致。如果这两点不能保证，信号就有可能会产生畸变。
 			</textarea
             >
           </section>
@@ -101,13 +120,25 @@ Note:
             <textarea data-template>
 
 # Signal integrity
-
 ---
 
-Note:
-信号完整性良好的表现，是传输线上的信号能按预期、不多不少地达到预设值。也可以说，是能够在接收器上准确地重建波形。
+**Signal integrity (SI)** is the ability of a system to transfer data/signals without excessive distortion.
 
-在低速电路中，信号完整性问题并不明显，因为互连线对于电信号来说是通畅透明的；但如果往高速走，信号变化的速率变快，上升时间短，数字电平的电压或电流波形就会开始出现畸变，从而导致接收的信息与发出的信息差别太大，出现错误。所以，在高速电路中需要考虑到信号完整性的问题。
+Note:
+我们定义信号完整性良好的表现，是传输线上的信号能按预期、不多不少地达到预设值。也可以说，是能够在接收器上准确地重建波形。
+---
+
+<img data-src="https://wiki-media-1253965369.cos.ap-guangzhou.myqcloud.com/img/20221210154412.png
+" style="height: 320px;" /> 
+
+- Signal degradations are present in all systems
+- Signal integrity becomes more important at higher
+speeds (shorter rise times)
+- Shorter rise times -> higher frequencies
+
+Note:
+
+在低速电路中，信号完整性问题也有，但影响不大，互连线对于电信号来说是基本是通畅透明的；但如果往高速走，信号变化的速率变快，上升时间短，数字电平的电压或电流波形就会开始出现畸变，从而导致接收的信息与发出的信息差别太大，出现错误。所以，在高速电路中需要考虑到信号完整性的问题。
 	  </textarea
             >
           </section>
