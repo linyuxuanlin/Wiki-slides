@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "slidev-demo",  
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [],
+  "env": {
+    //"EXAMPLE_ENV_VAR": "example_value"
+  }
+}
