@@ -2,12 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "slidev-demo",  
+      "src": "slide_Introduction-to-Docker",  
       "use": "@vercel/static"
     }
-  ],
-  "routes": [],
-  "env": {
-    //"EXAMPLE_ENV_VAR": "example_value"
-  }
+  ]
 }
